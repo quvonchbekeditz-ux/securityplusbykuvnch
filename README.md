@@ -4,7 +4,7 @@
 > *Muallif:* **Quvonchbek Mirzayev** ([@kuvnch](https://t.me/kuvnch))
 
 [![CompTIA Security+ SY0-701](https://img.shields.io/badge/CompTIA-Security%2B%20SY0--701-blue.svg)](https://www.comptia.org/certifications/security)
-[![Live Web Demo](https://img.shields.io/badge/Live-GitHub%20Pages-brightgreen.svg)](https://quvonchbekeditz-ux.github.io/comptia-securityplus-sy0701/)
+[![Live Web Demo](https://img.shields.io/badge/Live-GitHub%20Pages-brightgreen.svg)](https://quvonchbekeditz-ux.github.io/securityplusbykuvnch/)
 [![License](https://img.shields.io/badge/Security-SHA--256%20Vault-gold.svg)](#)
 
 ---
