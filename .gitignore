@@ -1,0 +1,16 @@
+# PyInstaller and build artifacts
+build/
+dist/
+__pycache__/
+*.pyc
+*.spec
+*.log
+
+# Desktop packages
+Tarqatish_Uchun_Paket/
+
+# Scratch & temporary test files
+scratch/
+test_*.py
+verify_*.py
+temp_*.pdf

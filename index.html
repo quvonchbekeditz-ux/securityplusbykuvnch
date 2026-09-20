@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CompTIA Security+ (SY0-701) Strategic Roadmap & 90-Question Exam</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="app_icon.ico">
+</head>
+<body>
+
+  <!-- Fullscreen Miracle Cyber Splash Loading Screen -->
+  <div id="app-splash-screen" class="app-splash-screen">
+    <div class="splash-particles-bg"></div>
+    <div class="splash-card">
+      <div class="splash-logo-container">
+        <img src="app_icon.png" alt="CompTIA Security+ Logo" class="splash-logo-img" />
+        <div class="splash-pulse-ring"></div>
+      </div>
+      <h1 class="splash-title">CompTIA Security+</h1>
+      <div class="splash-badge-row">
+        <span class="splash-tag">SY0-701 PRO</span>
+        <span class="splash-sparkle">✦</span>
+        <span class="splash-tag">MIRACLE CYBER SUITE</span>
+      </div>
+      <div class="splash-by-kuvnch">security plus by kuvnch</div>
+      <p class="splash-subtitle" id="splash-subtitle">Barcha 90 ta rasmiy imtihon, real dumps va PBQ amaliyot tizimi</p>
+
+      <div class="splash-progress-track">
+        <div class="splash-progress-bar" id="splash-progress-bar"></div>
+      </div>
+      <div class="splash-status-text" id="splash-status-text">⚡ Xavfsizlik moduli yuklanmoqda...</div>
+    </div>
+  </div>
+
+  <!-- Top Header -->
+  <header class="top-header">
+    <div class="header-left">
+      <div class="brand-unit" title="CompTIA Security+ SY0-701 by Kuvnch">
+        <div class="logo-badge">
+          <img src="app_icon.png" alt="Logo" class="header-logo-icon" /> CompTIA Security+ SY0-701
+        </div>
+        <div class="brand-signature">security plus by kuvnch</div>
+      </div>
+      <div class="header-title">
+        <h1 id="header-main-title">Strategic Cybersecurity Roadmap</h1>
+        <p id="header-sub-title">From Zero to Certified Cybersecurity Professional</p>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <!-- Dual-Pill Language Switcher -->
+      <div class="header-lang-selector" title="CompTIA Security+ Language Selector">
+        <button class="lang-pill-btn active" id="lang-btn-en">
+          <span>🇬🇧</span> EN
+        </button>
+        <button class="lang-pill-btn" id="lang-btn-uz">
+          <span>🇺🇿</span> Soft UZ
+        </button>
+      </div>
+
+      <!-- Theme Switcher (Tun / Kun) -->
+      <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle Day / Night Mode (Tun va Kun rejimi)">
+        <span id="theme-icon">🌙</span> <span id="theme-label">Dark</span>
+      </button>
+
+      <!-- Progress Bar Widget -->
+      <div class="progress-summary">
+        <span class="progress-text" id="progress-count-label">0/16 topics mastered</span>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+        <span class="progress-percent" id="progress-percent-label">0%</span>
+      </div>
+
+      <!-- User Profile -->
+      <div class="user-profile">
+        <div class="avatar">CS</div>
+        <div class="user-info">
+          <span class="user-name">Security Pro</span>
+          <span class="user-role">Candidate SY0-701</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs">
+    <button class="nav-tab active" data-target="roadmap-view">
+      <span>🗺️</span> <span id="tab-roadmap">Strategic Roadmap</span>
+    </button>
+    <button class="nav-tab" data-target="exam-view">
+      <span>🎓</span> <span id="tab-exam">Exam & Dumps Simulator (SY0-701)</span>
+    </button>
+    <button class="nav-tab" data-target="trainer-view">
+      <span>⚡</span> <span id="tab-ports">Ports & Protocols Trainer</span>
+    </button>
+    <button class="nav-tab" data-target="pbq-view">
+      <span>🛡️</span> <span id="tab-pbq">PBQ Simulator</span>
+    </button>
+    <button class="nav-tab" data-target="domains-view">
+      <span>📚</span> <span id="tab-domains">5 Exam Domains</span>
+    </button>
+    <button class="nav-tab" data-target="pdf-view">
+      <span>📖</span> <span id="tab-pdf">Official PDF Library (Kutubxona)</span>
+    </button>
+  </nav>
+
+  <!-- Main View Area -->
+  <main class="main-wrapper">
+
+    <!-- 1. STRATEGIC ROADMAP VIEW -->
+    <section id="roadmap-view" class="view-section roadmap-view" style="display: flex;">
+      
+      <!-- Top Scrubber Timeline Bar (Like the screenshot) -->
+      <div class="scrub-timeline-bar">
+        <div class="scrub-track">
+          <div class="scrub-active-segment" id="scrub-segment"></div>
+          <div class="scrub-handle start" id="scrub-handle-start" title="Q1 - Visible Range"></div>
+          <div class="scrub-handle end" id="scrub-handle-end" title="Q4 - Visible Range"></div>
+        </div>
+      </div>
+
+      <!-- Unified Scroll Container for Header & Swimlanes -->
+      <div class="roadmap-scroll-wrapper" id="roadmap-scroll-wrapper">
+        <div class="roadmap-board" id="roadmap-board">
+          
+          <!-- SVG Connector Overlay for Physics / Dependency Curves -->
+          <svg class="roadmap-connectors-svg" id="roadmap-connectors-svg">
+            <defs>
+              <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb"/>
+              </marker>
+              <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981"/>
+              </marker>
+              <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+              </marker>
+              <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#8b5cf6"/>
+              </marker>
+            </defs>
+          </svg>
+
+          <!-- Top Timeline Header Row -->
+          <div class="timeline-header-row">
+            <div class="timeline-header-left" style="display: flex; justify-content: space-between; align-items: center; padding-right: 12px;">
+              <div>
+                <span id="label-lanes-title">Lanes & Categories</span>
+                <span style="font-size: 14px; margin-left: 6px;">☰</span>
+              </div>
+              <button class="soft-translate-btn" id="roadmap-lang-btn" title="Toggle Language for Roadmap">
+                <span>🌐</span> <span id="roadmap-lang-btn-label">Soft UZ</span>
+              </button>
+            </div>
+            <div class="timeline-header-right">
+              <!-- Milestones Track Row -->
+              <div class="milestones-track-row">
+                <div class="milestones-track" id="milestones-track"></div>
+              </div>
+              <!-- Quarter Columns Row -->
+              <div class="quarters-columns-row">
+                <div class="quarter-column-header">
+                  <span class="quarter-name" id="quarter-name-q1" style="color: var(--q1-color);">Q1 (Weeks 1-3)</span>
+                  <span class="quarter-desc" id="quarter-desc-q1">IT & Networking Foundation</span>
+                </div>
+                <div class="quarter-column-header">
+                  <span class="quarter-name" id="quarter-name-q2" style="color: var(--q2-color);">Q2 (Weeks 4-6)</span>
+                  <span class="quarter-desc" id="quarter-desc-q2">Domain 1.0 & 2.0 (Threats)</span>
+                </div>
+                <div class="quarter-column-header">
+                  <span class="quarter-name" id="quarter-name-q3" style="color: var(--q3-color);">Q3 (Weeks 7-9)</span>
+                  <span class="quarter-desc" id="quarter-desc-q3">Domain 3.0 & 4.0 (Operations)</span>
+                </div>
+                <div class="quarter-column-header">
+                  <span class="quarter-name" id="quarter-name-q4" style="color: var(--q4-color);">Q4 (Weeks 10-12)</span>
+                  <span class="quarter-desc" id="quarter-desc-q4">Domain 5.0, PBQ & Exam</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swimlanes Container -->
+          <div id="swimlanes-container"></div>
+
+        </div>
+      </div>
+
+      <!-- Floating Vertical Toolbar on the right -->
+      <div class="floating-roadmap-toolbar" id="roadmap-toolbar">
+        <button class="toolbar-btn active" id="btn-toggle-connectors" title="Toggle Dependency Connectors (Bog'lovchi chiziqlar)">🔗</button>
+        <button class="toolbar-btn" id="btn-toggle-compact" title="Toggle Compact / Detailed View (Ko'rinish)">☰</button>
+        <button class="toolbar-btn" id="btn-zoom-in" title="Zoom In (+)">🔍</button>
+        <button class="toolbar-btn" id="btn-zoom-out" title="Zoom Out (-)">🔎</button>
+        <button class="toolbar-btn" id="btn-snap-grid" title="Snap to Active Phase (Hozirgi fazaga o'tish)">🧲</button>
+        <button class="toolbar-btn" id="btn-toolbar-lang" title="Toggle Language (UZ / EN)">🌐</button>
+        <button class="toolbar-btn" id="btn-toolbar-theme" title="Toggle Day / Night Mode (Tun va Kun)">🌙</button>
+      </div>
+
+      <!-- Floating Action Button at Bottom Right -->
+      <button class="floating-create-btn" id="btn-floating-target" title="Set study target">
+        <span>+</span> Set Target
+      </button>
+
+    </section>
+
+    <!-- 2. OFFICIAL 90-QUESTION EXAM SIMULATOR VIEW (Pearson VUE Style) -->
+    <section id="exam-view" class="view-section exam-view-container" style="display: none;">
+      
+      <!-- Exam Selection Hub Screen -->
+      <div id="exam-locked-screen" class="exam-hub-overlay" style="display: none;">
+        <div class="exam-hub-header">
+          <div class="exam-hub-header-text">
+            <h2 id="locked-exam-title">CompTIA Security+ (SY0-701) Exam & Practice Center</h2>
+            <p id="locked-exam-desc">Select your desired test mode below. All answers, timers, and progress are independently saved for each mode.</p>
+          </div>
+          <button class="soft-translate-btn" id="locked-exam-lang-btn">
+            <span>🌐</span> <span id="locked-exam-lang-label">Soft UZ</span>
+          </button>
+        </div>
+
+        <div class="exam-hub-cards-grid">
+          <!-- CARD 1: 90-QUESTION PEARSON VUE MOCK EXAM -->
+          <div class="exam-hub-card" id="hub-card-mock">
+            <div class="hub-card-top">
+              <span class="hub-card-badge mock">🛡️ Official Pearson VUE Format</span>
+              <span class="hub-mode-tag">SY0-701 Standard</span>
+            </div>
+            <h3 class="hub-card-title" id="hub-mock-title">90-Question Official Mock Exam</h3>
+            <p class="hub-card-desc" id="hub-mock-desc">
+              Complete simulation of the official international certification test. Includes 5 Performance-Based Questions (PBQ) + 85 scenario-based multiple choice.
+            </p>
+            <div class="hub-specs-list">
+              <div class="hub-spec-item">⏱️ <span id="hub-mock-spec-time">90 Minutes (Strict Timer)</span></div>
+              <div class="hub-spec-item">📝 <span id="hub-mock-spec-q">90 Questions (5 PBQ + 85 MCQ)</span></div>
+              <div class="hub-spec-item">🎯 <span id="hub-mock-spec-pass">Passing Score: 750 / 900 (83%)</span></div>
+            </div>
+            <div class="hub-status-box" id="hub-mock-status-box">
+              <div class="hub-status-label" id="hub-mock-status-label">Status: Ready to start</div>
+              <div class="hub-status-detail" id="hub-mock-status-detail">Not started yet</div>
+            </div>
+            <div class="hub-card-actions">
+              <button class="unlock-btn hub-main-btn" id="start-exam-now-btn">
+                🚀 Start 90-Question Exam
+              </button>
+              <div class="hub-secondary-actions">
+                <button class="exam-hub-btn-sub" id="hub-view-mock-result-btn" style="display:none;">
+                  📊 View Score Report
+                </button>
+                <button class="exam-hub-btn-sub" id="hub-reset-mock-btn" style="display:none;">
+                  🔄 Reset / Retake
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: 144 REAL EXAM DUMPS PRACTICE -->
+          <div class="exam-hub-card dumps" id="hub-card-dumps">
+            <div class="hub-card-top">
+              <span class="hub-card-badge dumps">📚 Authentic Exam Dumps (2024–2026)</span>
+              <span class="hub-mode-tag dumps">Study Guide & Dumps</span>
+            </div>
+            <h3 class="hub-card-title" id="hub-dumps-title">144 Real Exam Dumps Practice</h3>
+            <p class="hub-card-desc" id="hub-dumps-desc">
+              Authentic high-frequency exam questions extracted from CompTIA-SY0-701 2.pdf and Sybex 9th Edition Study Guide, featuring complete explanations and references.
+            </p>
+            <div class="hub-specs-list">
+              <div class="hub-spec-item">⏱️ <span id="hub-dumps-spec-time">150 Minutes (2.5 Hours)</span></div>
+              <div class="hub-spec-item">📝 <span id="hub-dumps-spec-q">144 Real Dumps Questions</span></div>
+              <div class="hub-spec-item">💡 <span id="hub-dumps-spec-pass">In-Depth Explanations for All Options</span></div>
+            </div>
+            <div class="hub-status-box dumps" id="hub-dumps-status-box">
+              <div class="hub-status-label" id="hub-dumps-status-label">Status: Ready to practice</div>
+              <div class="hub-status-detail" id="hub-dumps-status-detail">Not started yet</div>
+            </div>
+            <div class="hub-card-actions">
+              <button class="unlock-btn hub-main-btn dumps" id="start-dumps-exam-btn">
+                📖 Practice 144 Real Exam Dumps
+              </button>
+              <div class="hub-secondary-actions">
+                <button class="exam-hub-btn-sub" id="hub-view-dumps-result-btn" style="display:none;">
+                  📊 View Score Report
+                </button>
+                <button class="exam-hub-btn-sub" id="hub-reset-dumps-btn" style="display:none;">
+                  🔄 Reset / Retake
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Exam Screen -->
+      <div id="exam-active-screen" class="exam-active-layout" style="display: none;">
+        
+        <!-- Pearson VUE Top Status Bar -->
+        <div class="exam-top-bar">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <button class="exam-top-btn" id="exam-back-to-hub-btn" title="Bosh menyuga qaytish / Rejim tanlash">
+              <span>⬅</span> <span id="exam-back-hub-label">Bosh menyu (Menu)</span>
+            </button>
+            <div class="exam-title-badge" id="active-exam-title-badge">
+              <span>🛡️</span> <span id="active-exam-title-text">CompTIA Security+ SY0-701 Official Practice Exam</span>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <button class="soft-translate-btn" id="exam-toggle-uz-btn" style="background:#334155; color:#38bdf8; border-color:#475569;">
+              <span>🌐</span> <span id="exam-translate-label">Soft UZ Translation</span>
+            </button>
+            <div class="exam-timer-box" id="exam-timer-display">
+              <span>⏱️</span> <span id="timer-text">01:30:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exam-body-container">
+          <!-- Main Question Area -->
+          <div class="exam-question-area">
+            <div class="exam-question-card">
+              
+              <div class="question-meta-header">
+                <div>
+                  <span class="question-number-badge" id="current-q-num-badge">Question 1 of 90</span>
+                  <span class="question-domain-label" id="current-q-domain-badge">Domain 1.0 General Security Concepts</span>
+                </div>
+                <button class="flag-btn" id="current-q-flag-btn">
+                  <span>🚩</span> Flag for Review
+                </button>
+              </div>
+
+              <!-- Question Text -->
+              <div class="question-text-main" id="current-q-text-en">Loading question...</div>
+              <div class="question-uz-translation" id="current-q-text-uz">O'zbekcha tarjima...</div>
+
+              <!-- 4 Options -->
+              <div class="exam-options-list" id="current-q-options-container"></div>
+
+            </div>
+          </div>
+
+          <!-- Question Palette Sidebar (1 to 90) -->
+          <div class="exam-palette-sidebar">
+            <div class="palette-title">
+              <span id="palette-title-text">Questions (1 - 90)</span>
+              <span id="answered-count-badge" style="font-size: 11px; background:#eff6ff; color:#1d4ed8; padding:2px 6px; border-radius:10px;">0 / 90</span>
+            </div>
+
+            <div class="palette-legend">
+              <div class="legend-item"><div class="legend-dot unanswered"></div> Unanswered</div>
+              <div class="legend-item"><div class="legend-dot answered"></div> Answered</div>
+              <div class="legend-item"><div class="legend-dot flagged"></div> Flagged</div>
+            </div>
+
+            <div class="palette-grid" id="question-palette-grid"></div>
+          </div>
+        </div>
+
+        <!-- Exam Bottom Navigation Bar -->
+        <div class="exam-bottom-bar">
+          <button class="exam-btn" id="exam-prev-btn">◀ Previous</button>
+          
+          <div class="exam-nav-buttons">
+            <button class="exam-btn" id="exam-review-btn">Review All Questions</button>
+            <button class="exam-btn danger" id="exam-finish-btn">Submit Exam ➜</button>
+          </div>
+
+          <button class="exam-btn primary" id="exam-next-btn">Next ▶</button>
+        </div>
+
+      </div>
+
+      <!-- Exam Results Screen -->
+      <div id="exam-results-screen" class="exam-results-card" style="display: none;">
+        <div style="width:100%; display:flex; justify-content:flex-end; margin-bottom:12px;">
+          <button class="soft-translate-btn" id="results-exam-lang-btn">
+            <span>🌐</span> <span id="results-exam-lang-label">Soft UZ</span>
+          </button>
+        </div>
+        <h2 id="results-exam-title">CompTIA Security+ SY0-701 Examination Score Report</h2>
+        
+        <div class="score-display-big" id="result-score-number">780 / 900</div>
+        <div id="result-pass-fail-badge" class="pass-badge pass">PASSED</div>
+        
+        <p style="font-size:14px; color:var(--text-secondary); margin-top:12px;" id="result-summary-text">
+          Congratulations! You scored above the passing threshold of 750 (scale 100-900).
+        </p>
+
+        <!-- Domain Breakdown -->
+        <div class="domain-breakdown-list" id="result-domain-breakdown"></div>
+
+        <div style="margin-top:24px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+          <button class="exam-btn" id="result-back-to-hub-btn" style="background:#0284c7; color:white; border-color:#0369a1; font-weight:700;">
+            <span>🏠</span> <span id="result-back-hub-label">Bosh menyu / Testni almashtirish</span>
+          </button>
+          <button class="exam-btn primary" id="result-review-answers-btn">Review All Answers & Explanations</button>
+          <button class="exam-btn" id="result-retake-btn">Retake Exam</button>
+        </div>
+
+        <!-- Answers Review Section -->
+        <div id="result-full-review-container" style="display:none; margin-top:30px; text-align:left;"></div>
+      </div>
+
+    </section>
+
+    <!-- 3. PORT TRAINER VIEW -->
+    <section id="trainer-view" class="view-section trainer-container" style="display: none; flex-direction: column;">
+      <div class="trainer-header">
+        <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom: 8px; flex-wrap: wrap;">
+          <h2 id="ports-header-title">Essential Ports and Protocols (SY0-701)</h2>
+          <button class="soft-translate-btn" id="port-translate-header-btn">
+            <span>🌐</span> <span id="port-header-lang-label">Soft UZ</span>
+          </button>
+          <a href="https://www.youtube.com/watch?v=g2fT-g9PX9o" target="_blank" rel="noopener noreferrer" class="video-link-pill" title="Watch PowerCert Common Ports Video Lesson">
+            <span>▶️</span> Ports Video (PowerCert)
+          </a>
+        </div>
+        <p id="ports-header-desc">CompTIA Security+ requires you to know common ports for configuring firewalls, interpreting access logs, and identifying plaintext protocols.</p>
+        
+        <div class="trainer-mode-switch">
+          <button class="mode-btn port-filter-btn active" data-filter="all" id="btn-port-filter-all">All Ports (21)</button>
+          <button class="mode-btn port-filter-btn" data-filter="secure" id="btn-port-filter-secure">Secure / Encrypted</button>
+          <button class="mode-btn port-filter-btn" data-filter="insecure" id="btn-port-filter-insecure">Insecure / Plaintext</button>
+        </div>
+
+        <div style="margin-top: 14px;">
+          <input type="text" id="port-search-input" placeholder="Search port number or name (e.g., 443, SSH, DNS)..." style="padding: 8px 16px; width: 320px; border-radius: 20px; border: 1px solid #cbd5e1;">
+        </div>
+      </div>
+
+      <!-- Ports Grid -->
+      <div class="ports-grid" id="ports-grid"></div>
+
+      <!-- Interactive Quiz Box -->
+      <div class="quiz-box" id="quiz-box">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span id="quiz-box-heading" style="font-size:13px; font-weight:800; color:var(--primary); text-transform:uppercase; letter-spacing:0.5px;">Interactive Knowledge & Port Quiz</span>
+            <span id="quiz-progress-badge" class="quiz-progress-badge">1 / 24</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span id="quiz-score-badge" class="quiz-score-badge">Score: 0/0 (0%)</span>
+            <button class="soft-translate-btn" id="quiz-soft-uz-btn">
+              <span>🌐</span> <span id="quiz-soft-uz-label">Soft UZ</span>
+            </button>
+          </div>
+        </div>
+        <div class="quiz-question" id="quiz-question-text">Loading question...</div>
+        <div class="quiz-options" id="quiz-options-container"></div>
+        <div class="quiz-feedback" id="quiz-feedback"></div>
+        <div class="quiz-action-bar" style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+          <button class="quiz-btn-secondary" id="quiz-restart-btn">↺ Qayta boshlash (Restart)</button>
+          <button class="quiz-next-btn" id="quiz-next-btn">Keyingi savol (Next Question) ➜</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PBQ SIMULATOR VIEW -->
+    <section id="pbq-view" class="view-section pbq-container" style="display: none; flex-direction: column;">
+      <div class="trainer-header">
+        <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom: 8px; flex-wrap: wrap;">
+          <h2 id="pbq-header-title">PBQ (Performance-Based Questions) Simulator</h2>
+          <button class="soft-translate-btn" id="pbq-header-lang-btn">
+            <span>🌐</span> <span id="pbq-header-lang-label">Soft UZ</span>
+          </button>
+          <a href="https://www.youtube.com/watch?v=ODrEjR-DsR0" target="_blank" rel="noopener noreferrer" class="video-link-pill" title="Watch Cyberkraft PBQ Walkthrough on YouTube">
+            <span>▶️</span> PBQ Video (Cyberkraft)
+          </a>
+        </div>
+        <p id="pbq-header-desc">Hands-on simulation scenarios representing the practical items found at the beginning of the Security+ exam.</p>
+      </div>
+
+      <!-- Scenario 1: Firewall ACL -->
+      <div class="pbq-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h3 id="pbq-scenario1-title">Scenario 1: Enterprise Firewall ACL Configuration</h3>
+          <button class="soft-translate-btn" id="pbq-soft-uz-btn">
+            <span>🌐</span> <span id="pbq-soft-uz-label">Soft UZ</span>
+          </button>
+        </div>
+        <p id="pbq-desc-text" style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-top:8px;">
+          <strong>Scenario:</strong> Your organization has a public Web Server (<code>192.168.1.50</code>) residing in a DMZ. 
+          External internet users must access the web server exclusively via encrypted HTTPS (Port 443). Insecure remote Telnet traffic must be strictly blocked, and all other unspecified traffic must be dropped by default.
+        </p>
+
+        <table class="pbq-table">
+          <thead>
+            <tr>
+              <th id="th-rule">Rule #</th>
+              <th id="th-action">Action</th>
+              <th id="th-source">Source</th>
+              <th id="th-destination">Destination</th>
+              <th id="th-port">Port / Protocol</th>
+              <th id="th-desc">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rule 1</td>
+              <td>
+                <select id="pbq-r1" class="pbq-select">
+                  <option value="DENY">DENY</option>
+                  <option value="ALLOW">ALLOW</option>
+                </select>
+              </td>
+              <td>ANY (Internet)</td>
+              <td>192.168.1.50</td>
+              <td>Port 443 (HTTPS)</td>
+              <td id="desc-rule1">Public Web Traffic</td>
+            </tr>
+            <tr>
+              <td>Rule 2</td>
+              <td>
+                <select id="pbq-r2" class="pbq-select">
+                  <option value="ALLOW">ALLOW</option>
+                  <option value="DENY">DENY</option>
+                </select>
+              </td>
+              <td>ANY</td>
+              <td>ANY</td>
+              <td>Port 23 (Telnet)</td>
+              <td id="desc-rule2">Insecure Remote Access</td>
+            </tr>
+            <tr>
+              <td>Rule 3</td>
+              <td>
+                <select id="pbq-r3" class="pbq-select">
+                  <option value="ALLOW">ALLOW</option>
+                  <option value="DENY">DENY</option>
+                </select>
+              </td>
+              <td>ANY</td>
+              <td>ANY</td>
+              <td>ANY</td>
+              <td id="desc-rule3">All Other Traffic (Implicit Deny)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button id="pbq-check-btn" class="pbq-check-btn">Verify Rules ➜</button>
+        <div id="pbq-result-box" style="margin-top:14px; padding:12px; border-radius:8px; display:none;"></div>
+      </div>
+
+      <!-- PBQ Strategy Card -->
+      <div class="pbq-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <h3 id="pbq-tips-title">💡 Pro Tip: PBQ Time-Management Strategy</h3>
+          <button class="soft-translate-btn" id="pbq-tips-lang-btn">
+            <span>🌐</span> <span id="pbq-tips-lang-label">Soft UZ</span>
+          </button>
+        </div>
+        <div id="pbq-tips-content">
+          <ul style="padding-left:20px; font-size:13px; line-height:1.6;">
+            <li><strong>DO NOT solve PBQs at the start of the exam!</strong> When the test begins, questions 1 to 5 will be PBQs. They take 5–8 minutes each and can cause panic. Click <strong>"Flag for Review"</strong> and jump immediately to multiple-choice.</li>
+            <li>Finish all multiple-choice questions in 45–50 minutes, leaving a full 40 minutes to comfortably work through PBQs.</li>
+            <li>In firewall tables, the final rule must always be <code>DENY ANY ANY</code> (Implicit Deny).</li>
+            <li>In Wi-Fi scenarios, always select <strong>WPA3-Enterprise</strong> or <strong>WPA3-Personal</strong>; WEP or WPA-TKIP are never correct modern solutions.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. DOMAINS OVERVIEW VIEW -->
+    <section id="domains-view" class="view-section" style="display: none; padding: 24px; max-width: 1000px; margin: 0 auto; flex-direction: column;">
+      <div class="trainer-header">
+        <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom: 8px; flex-wrap: wrap;">
+          <h2 id="domains-header-title">CompTIA Security+ SY0-701: 5 Core Exam Domains</h2>
+          <button class="soft-translate-btn" id="domains-header-lang-btn">
+            <span>🌐</span> <span id="domains-header-lang-label">Soft UZ</span>
+          </button>
+          <a href="https://www.youtube.com/playlist?list=PLG49S3nxzAnl4QDVqK-hOnoqcSKEIDDuv" target="_blank" rel="noopener noreferrer" class="video-link-pill" title="Professor Messer SY0-701 Full YouTube Course Playlist">
+            <span>▶️</span> Full Video Course (Professor Messer)
+          </a>
+        </div>
+        <p id="domains-header-desc">Official curriculum weighting and subject breakdowns.</p>
+      </div>
+
+      <div id="domains-cards-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;"></div>
+    </section>
+
+    <!-- 6. OFFICIAL PDF LIBRARY & STUDY MATERIALS VIEW -->
+    <section id="pdf-view" class="view-section" style="display: none; padding: 24px; max-width: 1100px; margin: 0 auto; flex-direction: column; gap: 24px; width: 100%;">
+      <div class="trainer-header">
+        <div style="display:flex; justify-content:center; align-items:center; gap:12px; margin-bottom: 8px; flex-wrap: wrap;">
+          <h2 id="pdf-header-title">CompTIA Security+ SY0-701: Rasmiy Darsliklar & PDF Kutubxona</h2>
+          <button class="soft-translate-btn" id="pdf-header-lang-btn">
+            <span>🌐</span> <span id="pdf-header-lang-label">Soft UZ</span>
+          </button>
+        </div>
+        <p id="pdf-header-desc">D:\\comptia papkasidagi 993 betlik to'liq rasmiy Sybex darslik kitobi va 279 betlik Practice Test Dumps to'plami.</p>
+      </div>
+
+      <div id="pdf-catalog-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 24px;">
+        <!-- Card 1: Study Guide 9th Edition -->
+        <div class="pdf-card" style="background:var(--card-bg, #111a2e); border:1px solid var(--border-color, #1e293b); border-radius:12px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; gap:16px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          <div>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+              <span style="font-size:36px;">📘</span>
+              <div>
+                <h3 id="pdf-card1-title" style="font-size:18px; font-weight:700; color:var(--text-main, #f8fafc); margin:0;">CompTIA Security+ Study Guide (Exam SY0-701)</h3>
+                <span style="font-size:12px; color:#38bdf8; font-weight:600;">9th Edition • Mike Chapple & David Seidl (Sybex / Wiley)</span>
+              </div>
+            </div>
+            <p id="pdf-card1-desc" style="font-size:13px; color:var(--text-muted, #94a3b8); line-height:1.6;">
+              CompTIA Security+ bo'yicha dunyodagi eng nufuzli, 993 betlik to'liq rasmiy qo'llanma. Barcha 5 ta domen, laboratoriyalar, amaliy stsenariylar va rasmiy imtihon standartlarini o'z ichiga oladi.
+            </p>
+            <div style="margin-top:12px; display:flex; gap:12px; flex-wrap:wrap;">
+              <span style="background:rgba(56, 189, 248, 0.1); color:#38bdf8; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600;">📄 993 Bet</span>
+              <span style="background:rgba(16, 185, 129, 0.1); color:#10b981; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600;">💾 251 MB</span>
+              <span style="background:rgba(139, 92, 246, 0.1); color:#a78bfa; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600;">🔒 Rasmiy Nashr</span>
+            </div>
+          </div>
+          <button class="unlock-btn" id="btn-open-study-guide" style="width:100%; text-align:center; padding:12px; font-weight:700; font-size:14px; border-radius:8px; cursor:pointer;">
+            📖 Kitobni Ochish (PDF Reader)
+          </button>
+        </div>
+
+        <!-- Card 2: Practice Exam Dumps -->
+        <div class="pdf-card" style="background:var(--card-bg, #111a2e); border:1px solid var(--border-color, #1e293b); border-radius:12px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; gap:16px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          <div>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+              <span style="font-size:36px;">🎯</span>
+              <div>
+                <h3 id="pdf-card2-title" style="font-size:18px; font-weight:700; color:var(--text-main, #f8fafc); margin:0;">CompTIA SY0-701 Practice Test Dumps</h3>
+                <span style="font-size:12px; color:#10b981; font-weight:600;">Authentic Real Exam Questions & Answers</span>
+              </div>
+            </div>
+            <p id="pdf-card2-desc" style="font-size:13px; color:var(--text-muted, #94a3b8); line-height:1.6;">
+              279 betlik haqiqiy imtihon savollari to'plami. Har bir savolning to'g'ri javoblari, chuqur tahlillari va Sybex kitobining bo'limlariga berilgan rasmiy havolalar bilan boyitilgan.
+            </p>
+            <div style="margin-top:12px; display:flex; gap:12px; flex-wrap:wrap;">
+              <span style="background:rgba(56, 189, 248, 0.1); color:#38bdf8; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600;">📄 279 Bet</span>
+              <span style="background:rgba(16, 185, 129, 0.1); color:#10b981; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600;">💾 139 MB</span>
+              <span style="background:rgba(245, 158, 11, 0.1); color:#f59e0b; padding:4px 10px; border-radius:6px; font-size:12px; font-weight:600;">⚡ 144+ Savollar</span>
+            </div>
+          </div>
+          <button class="unlock-btn" id="btn-open-dumps-pdf" style="width:100%; text-align:center; padding:12px; font-weight:700; font-size:14px; border-radius:8px; cursor:pointer; background:#0284c7; border: 1px solid #38bdf8;">
+            📝 Savollar To'plamini Ochish (PDF)
+          </button>
+        </div>
+      </div>
+
+      <!-- EMBEDDED IN-APP ADVANCED PDF READER -->
+      <div id="embedded-pdf-reader" class="embedded-pdf-reader" style="display: none;">
+        <!-- Top Nav & Book Tabs -->
+        <div class="pdf-reader-topbar">
+          <div class="pdf-topbar-left">
+            <button class="pdf-tool-btn" id="pdf-btn-close-reader" title="Kutubxonaga qaytish">
+              <span>←</span> <span id="pdf-lbl-back">Kutubxona</span>
+            </button>
+            <div class="pdf-book-switcher">
+              <button class="pdf-book-tab active" id="pdf-tab-guide">📘 Study Guide (993 bet)</button>
+              <button class="pdf-book-tab" id="pdf-tab-dumps">🎯 Practice Dumps (279 bet)</button>
+            </div>
+          </div>
+
+          <div class="pdf-topbar-right">
+            <button class="pdf-tool-btn" id="pdf-btn-external-open" title="Tashqi PDF dasturida ochish">
+              <span>↗</span> <span id="pdf-lbl-external">Tashqi dastur</span>
+            </button>
+            <button class="pdf-tool-btn" id="pdf-btn-fullscreen" title="To'liq ekran (F)">
+              <span>⛶</span> <span id="pdf-lbl-fullscreen">Katta ekran</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Interactive Control Toolbar -->
+        <div class="pdf-reader-toolbar">
+          <!-- Page Nav Group -->
+          <div class="pdf-toolbar-group">
+            <button class="pdf-icon-btn" id="pdf-btn-prev" title="Oldingi sahifa (Left Arrow)">◀</button>
+            <div class="pdf-page-indicator">
+              <span id="pdf-lbl-page">Sahifa:</span>
+              <input type="number" id="pdf-page-num-input" value="1" min="1" step="1">
+              <span id="pdf-total-pages-span">/ ...</span>
+            </div>
+            <button class="pdf-icon-btn" id="pdf-btn-next" title="Keyingi sahifa (Right Arrow)">▶</button>
+          </div>
+
+          <!-- Page Scrubber Slider -->
+          <div class="pdf-toolbar-group pdf-scrubber-box">
+            <input type="range" id="pdf-page-scrubber" min="1" max="993" value="1" class="pdf-scrubber" title="Tezkor sahifani siljitish">
+          </div>
+
+          <!-- Quick Jump Dropdown -->
+          <div class="pdf-toolbar-group">
+            <select id="pdf-quick-jump-select" class="pdf-select">
+              <option value="">⚡ Domen yoki Bo'limga sakrash...</option>
+            </select>
+          </div>
+
+          <!-- Zoom & View Group -->
+          <div class="pdf-toolbar-group">
+            <button class="pdf-icon-btn" id="pdf-btn-zoom-out" title="Kichiklashtirish (-)">➖</button>
+            <select id="pdf-zoom-select" class="pdf-select" style="width: 80px;">
+              <option value="0.75">75%</option>
+              <option value="1.0">100%</option>
+              <option value="1.25" selected>125%</option>
+              <option value="1.5">150%</option>
+              <option value="2.0">200%</option>
+              <option value="width">Moslash</option>
+              <option value="custom" disabled hidden>Maxsus</option>
+            </select>
+            <button class="pdf-icon-btn" id="pdf-btn-zoom-in" title="Kattalashtirish (+)">➕</button>
+            <button class="pdf-tool-btn" id="pdf-btn-fit-width" title="Kenglikka moslashtirish">↔ Moslash</button>
+            <button class="pdf-icon-btn" id="pdf-btn-rotate" title="90 gradus burish">↷</button>
+          </div>
+
+          <!-- Reading Theme Modes -->
+          <div class="pdf-toolbar-group pdf-mode-group">
+            <button class="pdf-mode-btn active" id="pdf-mode-normal" title="Kunduzgi yorug' rejim">☀️</button>
+            <button class="pdf-mode-btn" id="pdf-mode-dark" title="Tungi qora rejim (Ko'z himoyasi)">🌙</button>
+            <button class="pdf-mode-btn" id="pdf-mode-sepia" title="Sepia qog'oz rejimi">📜</button>
+          </div>
+
+          <!-- Bookmarks -->
+          <div class="pdf-toolbar-group">
+            <button class="pdf-tool-btn" id="pdf-btn-bookmark" title="Ushbu sahifani xatcho'p qilish (B)">🏷️ Xatcho'p</button>
+            <button class="pdf-tool-btn" id="pdf-btn-toggle-bookmarks" title="Xatcho'plar ro'yxati">🔖 Ro'yxat</button>
+          </div>
+        </div>
+
+        <!-- Bookmarks Slide Drawer -->
+        <div id="pdf-bookmarks-drawer" class="pdf-bookmarks-drawer" style="display: none;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; border-bottom:1px solid #334155; padding-bottom:6px;">
+            <strong style="color:#38bdf8; font-size:13px;">🔖 Saqlangan Xatcho'plar</strong>
+            <span style="font-size:11px; color:#94a3b8;">(Bosing va o'ting)</span>
+          </div>
+          <div id="pdf-bookmarks-list" class="pdf-bookmarks-list"></div>
+        </div>
+
+        <!-- Canvas Display Area -->
+        <div id="pdf-canvas-container" class="pdf-canvas-container">
+          <div id="pdf-loading-overlay" class="pdf-loading-overlay" style="display: none;">
+            <div class="pdf-spinner"></div>
+            <div id="pdf-loading-text" style="color:#38bdf8; font-size:13px; font-weight:600; margin-top:10px;">Yuklanmoqda...</div>
+          </div>
+          <canvas id="pdf-render-canvas" class="pdf-mode-normal"></canvas>
+        </div>
+
+        <!-- Footer status bar -->
+        <div class="pdf-reader-footer">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="color:#10b981;">●</span>
+            <span id="pdf-active-book-title" style="font-weight:600; color:#cbd5e1;">CompTIA Security+ Study Guide</span>
+          </div>
+          <div style="color:#64748b; font-size:11px;">
+            Navigatsiya: ◄ / ► tugmalari | Masshtab: + / - | Katta ekran: F | Xatcho'p: B
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Detail Drawer (Slide-Over Modal) -->
+  <aside class="detail-drawer" id="detail-drawer">
+    <div class="drawer-header">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <h2 id="drawer-title">Topic Details</h2>
+        <button class="soft-translate-btn" id="drawer-soft-uz-btn">
+          <span>🌐</span> <span id="drawer-soft-uz-label">Soft UZ</span>
+        </button>
+      </div>
+      <button class="close-btn" id="close-drawer-btn">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Status Switcher -->
+      <div class="status-switcher-box">
+        <div class="status-label" id="drawer-status-heading">Learning Status:</div>
+        <div class="status-buttons">
+          <button class="status-btn" id="btn-status-not_started">Not Started</button>
+          <button class="status-btn" id="btn-status-in_progress">In Progress</button>
+          <button class="status-btn" id="btn-status-mastered">Mastered ✓</button>
+        </div>
+      </div>
+
+      <!-- Lesson Body Content Area -->
+      <div class="drawer-content-area" id="drawer-content-area"></div>
+
+      <!-- Notes Area -->
+      <div class="drawer-notes">
+        <label for="drawer-notes-input" id="drawer-notes-label">Personal Notes:</label>
+        <textarea id="drawer-notes-input" placeholder="Type your personal notes for this topic (automatically saved)..." style="width: 100%; height: 80px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; resize: vertical;"></textarea>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay Backdrop -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="exam_questions.js"></script>
+  <script src="real_exam_dumps.js"></script>
+  <script src="pdfjs/pdf.min.js"></script>
+  <script src="pdf_reader.js"></script>
+  <script src="app.js"></script>
+  <script src="license_engine.js"></script>
+</body>
+</html>
