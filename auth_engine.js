@@ -101,6 +101,9 @@
       }
     } catch (e) {}
     updateHeaderUI();
+    setTimeout(function () {
+      openAuthModal(true);
+    }, 200);
   }
 
   // --- Simple SHA-256 for Local Vault Passwords ---
@@ -549,34 +552,21 @@
         <div class="secplus-modal-card">
           <div class="secplus-modal-header">
             <div class="secplus-modal-title">
-              <span>🛡️</span> <span id="auth-modal-title-text">Kirish & Ro'yxatdan o'tish</span>
+              <span>🛡️</span> <span id="auth-modal-title-text">Platformaga Kirish (Ro'yxatdan o'tish)</span>
             </div>
             <button class="secplus-modal-close" id="close-auth-modal-btn">✕</button>
           </div>
           <div class="secplus-modal-body">
             <div class="auth-tabs">
-              <button class="auth-tab-btn active" id="tab-btn-login">🔑 Kirish</button>
-              <button class="auth-tab-btn" id="tab-btn-register">📝 Ro'yxatdan o'tish</button>
+              <button class="auth-tab-btn active" id="tab-btn-register">📝 Ro'yxatdan o'tish</button>
+              <button class="auth-tab-btn" id="tab-btn-login">🔑 Kirish</button>
             </div>
 
             <div id="auth-error-box" class="auth-error-msg"></div>
             <div id="auth-success-box" class="auth-success-msg"></div>
 
-            <!-- Login Form -->
-            <form id="auth-login-form">
-              <div class="auth-input-group">
-                <label class="auth-input-label">Email Manzilingiz</label>
-                <input type="email" id="login-email" class="auth-input" placeholder="nomingiz@misol.uz" required />
-              </div>
-              <div class="auth-input-group">
-                <label class="auth-input-label">Parol</label>
-                <input type="password" id="login-password" class="auth-input" placeholder="••••••••" required />
-              </div>
-              <button type="submit" class="auth-submit-btn">Tizimga Kirish</button>
-            </form>
-
-            <!-- Register Form -->
-            <form id="auth-register-form" style="display: none;">
+            <!-- Register Form (Default) -->
+            <form id="auth-register-form">
               <div class="auth-input-group">
                 <label class="auth-input-label">To'liq Ism va Familiya</label>
                 <input type="text" id="reg-name" class="auth-input" placeholder="Ali Valiyev" required />
@@ -594,6 +584,19 @@
                 <input type="password" id="reg-password-confirm" class="auth-input" placeholder="••••••••" minlength="6" required />
               </div>
               <button type="submit" class="auth-submit-btn" style="background:#10b981;">Ro'yxatdan O'tish</button>
+            </form>
+
+            <!-- Login Form -->
+            <form id="auth-login-form" style="display: none;">
+              <div class="auth-input-group">
+                <label class="auth-input-label">Email Manzilingiz</label>
+                <input type="email" id="login-email" class="auth-input" placeholder="nomingiz@misol.uz" required />
+              </div>
+              <div class="auth-input-group">
+                <label class="auth-input-label">Parol</label>
+                <input type="password" id="login-password" class="auth-input" placeholder="••••••••" required />
+              </div>
+              <button type="submit" class="auth-submit-btn">Tizimga Kirish</button>
             </form>
 
             <div class="auth-divider">yoki</div>
@@ -747,15 +750,27 @@
   });
 
   // --- Modal Open/Close Logic ---
-  function openAuthModal() {
+  function openAuthModal(isMandatory) {
     const modal = document.getElementById('secplus-auth-modal');
     if (modal) {
       clearAuthAlerts();
+      const closeBtn = document.getElementById('close-auth-modal-btn');
+      if (closeBtn) {
+        closeBtn.style.display = (!currentUser || isMandatory) ? 'none' : 'block';
+      }
+      const tabRegister = document.getElementById('tab-btn-register');
+      if (tabRegister && (!currentUser || isMandatory)) {
+        tabRegister.click();
+      }
       modal.classList.add('open');
     }
   }
 
   function closeAuthModal() {
+    if (!currentUser) {
+      showAuthError('Saytdan foydalanish uchun ro\'yxatdan o\'tish majburiy!');
+      return;
+    }
     const modal = document.getElementById('secplus-auth-modal');
     if (modal) modal.classList.remove('open');
   }
@@ -1029,6 +1044,11 @@
     injectAuthStyles();
     injectModals();
     initFirebase();
+    setTimeout(function () {
+      if (!currentUser) {
+        openAuthModal(true);
+      }
+    }, 350);
   });
 
   // Expose API
