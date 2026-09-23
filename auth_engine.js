@@ -777,65 +777,38 @@
     return false;
   }
 
-  function seedDefaultSubscribers() {
-    return [
-      {
-        uid: 'USR-ADMIN01',
-        name: 'Quvonchbek (Asoschi & Admin)',
-        email: 'quvonchbekeditz@gmail.com',
-        provider: 'google.com',
-        licenseTier: 'PREMIUM',
-        status: 'active',
-        solvedQuestions: 90,
-        score: '96%',
-        createdAt: new Date(Date.now() - 86400000 * 5).toISOString()
-      },
-      {
-        uid: 'USR-A101',
-        name: 'Ali Valiyev',
-        email: 'alivaliyev@gmail.com',
-        provider: 'google.com',
-        licenseTier: 'PREMIUM',
-        status: 'active',
-        solvedQuestions: 45,
-        score: '84%',
-        createdAt: new Date(Date.now() - 86400000 * 2).toISOString()
-      },
-      {
-        uid: 'USR-B202',
-        name: 'Nodirbek Yusupov',
-        email: 'nodir.yusupov@mail.ru',
-        provider: 'email',
-        licenseTier: 'TRIAL',
-        status: 'active',
-        solvedQuestions: 28,
-        score: '75%',
-        createdAt: new Date(Date.now() - 86400000 * 1).toISOString()
-      },
-      {
-        uid: 'USR-C303',
-        name: 'Malika Rahimova',
-        email: 'm.rahimova@gmail.com',
-        provider: 'google.com',
-        licenseTier: 'TRIAL',
-        status: 'active',
-        solvedQuestions: 15,
-        score: '90%',
-        createdAt: new Date().toISOString()
-      }
-    ];
-  }
-
   function getUsersVault() {
     try {
-      let vault = JSON.parse(localStorage.getItem(STORAGE_KEYS.USERS_VAULT) || '[]');
-      if (!vault || vault.length === 0) {
-        vault = seedDefaultSubscribers();
-        localStorage.setItem(STORAGE_KEYS.USERS_VAULT, JSON.stringify(vault));
+      let raw = localStorage.getItem(STORAGE_KEYS.USERS_VAULT);
+      let vault = raw ? JSON.parse(raw) : [];
+      // Clean legacy dummy users completely
+      vault = vault.filter(u => 
+        u && u.email &&
+        !['alivaliyev@gmail.com', 'nodir.yusupov@mail.ru', 'm.rahimova@gmail.com'].includes(u.email.toLowerCase()) &&
+        !['USR-A101', 'USR-B202', 'USR-C303'].includes(u.uid) &&
+        !['Ali Valiyev', 'Nodirbek Yusupov', 'Malika Rahimova'].includes(u.name)
+      );
+      // Ensure current user is in vault if logged in
+      if (currentUser && currentUser.email) {
+        const found = vault.find(u => u.email.toLowerCase() === currentUser.email.toLowerCase());
+        if (!found) {
+          vault.unshift({
+            uid: currentUser.uid || ('USR-' + Date.now().toString(36).toUpperCase()),
+            name: currentUser.name || 'Admin',
+            email: currentUser.email,
+            provider: currentUser.provider || 'google.com',
+            licenseTier: isAdminUser(currentUser) ? 'PREMIUM' : 'TRIAL',
+            status: 'active',
+            solvedQuestions: parseInt(localStorage.getItem('secplus_solved_questions') || '0', 10),
+            score: localStorage.getItem('secplus_last_score') || '0%',
+            createdAt: currentUser.createdAt || new Date().toISOString()
+          });
+        }
       }
+      localStorage.setItem(STORAGE_KEYS.USERS_VAULT, JSON.stringify(vault));
       return vault;
     } catch (e) {
-      return seedDefaultSubscribers();
+      return [];
     }
   }
 
@@ -1039,30 +1012,41 @@
                   <div class="admin-kpi-icon" style="background:#dbeafe; color:#2563eb;">👥</div>
                   <div>
                     <div style="font-size:11px; color:#64748b; font-weight:600;">Jami Obunachilar</div>
-                    <div style="font-size:20px; font-weight:700;" id="kpi-total-subscribers">0</div>
+                    <div style="font-size:22px; font-weight:800; color:#0f172a;" class="admin-kpi-num" id="kpi-total-subscribers">0</div>
                   </div>
                 </div>
                 <div class="admin-kpi-card">
                   <div class="admin-kpi-icon" style="background:#dcfce7; color:#166534;">💎</div>
                   <div>
                     <div style="font-size:11px; color:#64748b; font-weight:600;">VIP Premium A'zolar</div>
-                    <div style="font-size:20px; font-weight:700;" id="kpi-vip-subscribers">0</div>
+                    <div style="font-size:22px; font-weight:800; color:#0f172a;" class="admin-kpi-num" id="kpi-vip-subscribers">0</div>
                   </div>
                 </div>
                 <div class="admin-kpi-card">
                   <div class="admin-kpi-icon" style="background:#fef3c7; color:#92400e;">⏱️</div>
                   <div>
                     <div style="font-size:11px; color:#64748b; font-weight:600;">Sinov Foydalanuvchilari</div>
-                    <div style="font-size:20px; font-weight:700;" id="kpi-trial-subscribers">0</div>
+                    <div style="font-size:22px; font-weight:800; color:#0f172a;" class="admin-kpi-num" id="kpi-trial-subscribers">0</div>
                   </div>
                 </div>
                 <div class="admin-kpi-card">
                   <div class="admin-kpi-icon" style="background:#ede9fe; color:#5b21b6;">⚡</div>
                   <div>
                     <div style="font-size:11px; color:#64748b; font-weight:600;">Bugun Qo'shilganlar</div>
-                    <div style="font-size:20px; font-weight:700;" id="kpi-today-subscribers">0</div>
+                    <div style="font-size:22px; font-weight:800; color:#0f172a;" class="admin-kpi-num" id="kpi-today-subscribers">0</div>
                   </div>
                 </div>
+              </div>
+
+              <!-- Real Cloud Sync Information Box -->
+              <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:12px 16px; margin-bottom:14px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12.5px; color:#166534;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span style="font-size:18px;">✅</span>
+                  <span><b>Haqiqiy Baza Rejimi:</b> Soxta ma'lumotlar o'chirildi. Bu yerda faqat haqiqiy ro'yxatdan o'tgan foydalanuvchilar ko'rinadi.</span>
+                </div>
+                <button type="button" onclick="document.getElementById('admin-tab-settings').click()" style="background:#16a34a; color:#fff; border:none; padding:6px 12px; border-radius:6px; font-size:11px; font-weight:700; cursor:pointer; white-space:nowrap;">
+                  Baza Sozlamalari ⚙️
+                </button>
               </div>
 
               <!-- Toolbar: Search, Filters, Export -->
@@ -1463,8 +1447,14 @@
     if (vault.length === 0) {
       tbody.innerHTML = `
         <tr>
-          <td colspan="6" style="text-align:center; padding:30px; color:#94a3b8;">
-            Hech qanday obunachi topilmadi.
+          <td colspan="6" style="text-align:center; padding:45px 20px; color:#64748b;">
+            <div style="font-size:36px; margin-bottom:10px;">📭</div>
+            <div style="font-weight:700; font-size:15px; color:#1e293b; margin-bottom:6px;" class="dark-mode-text">
+              Hozircha yangi obunachilar yo'q
+            </div>
+            <div style="font-size:12.5px; color:#94a3b8; max-width:440px; margin:0 auto; line-height:1.5;">
+              Faqat haqiqiy ro'yxatdan o'tgan foydalanuvchilar shu yerda ko'rinadi. Yangi obunachilar qo'shilishi bilan ularning natijalari darhol aks etadi.
+            </div>
           </td>
         </tr>
       `;
