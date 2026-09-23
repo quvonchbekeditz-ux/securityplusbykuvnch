@@ -539,9 +539,308 @@
         color: #64748b;
         margin-top: 2px;
       }
+
+      /* Admin Badge in Header */
+      .admin-badge-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        color: #ffffff;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.35);
+        transition: all 0.2s ease;
+        margin-right: 6px;
+      }
+      .admin-badge-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.5);
+      }
+
+      /* OTP Verification UI */
+      .otp-container {
+        text-align: center;
+        padding: 10px 0;
+      }
+      .otp-inputs {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 16px 0;
+      }
+      .otp-digit {
+        width: 44px;
+        height: 48px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+        border: 2px solid #cbd5e1;
+        border-radius: 8px;
+        outline: none;
+        transition: all 0.15s ease;
+      }
+      .dark-mode .otp-digit {
+        background: #0f172a;
+        border-color: #334155;
+        color: #f8fafc;
+      }
+      .otp-digit:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      }
+      .otp-info-banner {
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px dashed #3b82f6;
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 13px;
+        color: #1d4ed8;
+        margin: 12px 0;
+        font-weight: 500;
+      }
+      .dark-mode .otp-info-banner {
+        background: rgba(59, 130, 246, 0.15);
+        color: #93c5fd;
+      }
+
+      /* Admin Dashboard Modal */
+      .admin-modal-card {
+        max-width: 960px !important;
+        width: 95% !important;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .admin-tabs {
+        display: flex;
+        gap: 8px;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 0 20px 12px 20px;
+      }
+      .dark-mode .admin-tabs {
+        border-bottom-color: #334155;
+      }
+      .admin-tab-btn {
+        padding: 8px 16px;
+        border: none;
+        background: #f1f5f9;
+        color: #64748b;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+      .dark-mode .admin-tab-btn {
+        background: #0f172a;
+        color: #94a3b8;
+      }
+      .admin-tab-btn.active {
+        background: #2563eb;
+        color: #ffffff;
+      }
+      .admin-kpis {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .admin-kpi-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .dark-mode .admin-kpi-card {
+        background: #0f172a;
+        border-color: #334155;
+      }
+      .admin-kpi-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+      .admin-table-container {
+        overflow-x: auto;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        max-height: 400px;
+        overflow-y: auto;
+      }
+      .dark-mode .admin-table-container {
+        border-color: #334155;
+      }
+      .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        text-align: left;
+      }
+      .admin-table th {
+        background: #f1f5f9;
+        padding: 10px 14px;
+        font-weight: 700;
+        color: #475569;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+      }
+      .dark-mode .admin-table th {
+        background: #0f172a;
+        color: #cbd5e1;
+      }
+      .admin-table td {
+        padding: 12px 14px;
+        border-top: 1px solid #e2e8f0;
+        color: #334155;
+      }
+      .dark-mode .admin-table td {
+        border-top-color: #334155;
+        color: #e2e8f0;
+      }
+      .admin-table tr:hover {
+        background: #f8fafc;
+      }
+      .dark-mode .admin-table tr:hover {
+        background: #1e293b;
+      }
+      .admin-badge {
+        padding: 3px 8px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 700;
+        display: inline-block;
+      }
+      .admin-badge-vip { background: #dcfce7; color: #166534; }
+      .admin-badge-trial { background: #fef3c7; color: #92400e; }
+      .admin-badge-google { background: #e0f2fe; color: #075985; }
+      .admin-badge-email { background: #ede9fe; color: #5b21b6; }
+      .admin-badge-blocked { background: #fee2e2; color: #991b1b; }
+      .admin-action-btn {
+        padding: 4px 8px;
+        border-radius: 6px;
+        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.1s ease;
+      }
+      .dark-mode .admin-action-btn {
+        background: #0f172a;
+        border-color: #475569;
+        color: #e2e8f0;
+      }
+      .admin-action-btn:hover {
+        background: #f1f5f9;
+        border-color: #94a3b8;
+      }
     `;
     document.head.appendChild(style);
   }
+
+  // --- Admin Configuration & Detection ---
+  const DEFAULT_ADMIN_EMAILS = [
+    'quvonchbekeditz@gmail.com',
+    'quvonchbek@gmail.com',
+    'quvonchbekeditz.ux@gmail.com',
+    'admin@securityplus.uz'
+  ];
+
+  function getAdminEmails() {
+    try {
+      const custom = JSON.parse(localStorage.getItem('secplus_admin_emails') || '[]');
+      return Array.from(new Set([...DEFAULT_ADMIN_EMAILS, ...custom]));
+    } catch (e) {
+      return DEFAULT_ADMIN_EMAILS;
+    }
+  }
+
+  function isAdminUser(user) {
+    if (!user || !user.email) return false;
+    const email = user.email.toLowerCase().trim();
+    const list = getAdminEmails().map(e => e.toLowerCase().trim());
+    if (list.includes(email)) return true;
+    if (email.includes('quvonchbek') || email.startsWith('admin@')) return true;
+    return false;
+  }
+
+  function seedDefaultSubscribers() {
+    return [
+      {
+        uid: 'USR-ADMIN01',
+        name: 'Quvonchbek (Asoschi & Admin)',
+        email: 'quvonchbekeditz@gmail.com',
+        provider: 'google.com',
+        licenseTier: 'PREMIUM',
+        status: 'active',
+        solvedQuestions: 90,
+        score: '96%',
+        createdAt: new Date(Date.now() - 86400000 * 5).toISOString()
+      },
+      {
+        uid: 'USR-A101',
+        name: 'Ali Valiyev',
+        email: 'alivaliyev@gmail.com',
+        provider: 'google.com',
+        licenseTier: 'PREMIUM',
+        status: 'active',
+        solvedQuestions: 45,
+        score: '84%',
+        createdAt: new Date(Date.now() - 86400000 * 2).toISOString()
+      },
+      {
+        uid: 'USR-B202',
+        name: 'Nodirbek Yusupov',
+        email: 'nodir.yusupov@mail.ru',
+        provider: 'email',
+        licenseTier: 'TRIAL',
+        status: 'active',
+        solvedQuestions: 28,
+        score: '75%',
+        createdAt: new Date(Date.now() - 86400000 * 1).toISOString()
+      },
+      {
+        uid: 'USR-C303',
+        name: 'Malika Rahimova',
+        email: 'm.rahimova@gmail.com',
+        provider: 'google.com',
+        licenseTier: 'TRIAL',
+        status: 'active',
+        solvedQuestions: 15,
+        score: '90%',
+        createdAt: new Date().toISOString()
+      }
+    ];
+  }
+
+  function getUsersVault() {
+    try {
+      let vault = JSON.parse(localStorage.getItem(STORAGE_KEYS.USERS_VAULT) || '[]');
+      if (!vault || vault.length === 0) {
+        vault = seedDefaultSubscribers();
+        localStorage.setItem(STORAGE_KEYS.USERS_VAULT, JSON.stringify(vault));
+      }
+      return vault;
+    } catch (e) {
+      return seedDefaultSubscribers();
+    }
+  }
+
+  let pendingRegistration = null;
+  let otpTimerInterval = null;
 
   function injectModals() {
     if (document.getElementById('secplus-auth-modal')) return;
@@ -557,7 +856,7 @@
             <button class="secplus-modal-close" id="close-auth-modal-btn">✕</button>
           </div>
           <div class="secplus-modal-body">
-            <div class="auth-tabs">
+            <div class="auth-tabs" id="auth-tabs-bar">
               <button class="auth-tab-btn active" id="tab-btn-register">📝 Ro'yxatdan o'tish</button>
               <button class="auth-tab-btn" id="tab-btn-login">🔑 Kirish</button>
             </div>
@@ -586,6 +885,44 @@
               <button type="submit" class="auth-submit-btn" style="background:#10b981;">Ro'yxatdan O'tish</button>
             </form>
 
+            <!-- OTP Verification Step -->
+            <div id="auth-otp-step" style="display: none;">
+              <div class="otp-container">
+                <div style="font-size: 36px; margin-bottom: 6px;">📧</div>
+                <h3 style="margin: 0 0 6px 0; font-size: 17px;">Emailni Tasdiqlash</h3>
+                <p style="font-size: 13px; color: #64748b; margin: 0 0 10px 0;">
+                  6 xonali tasdiqlash kodi quyidagi manzilga yuborildi:<br/>
+                  <strong id="otp-sent-email" style="color: #2563eb;">user@example.com</strong>
+                </p>
+
+                <div class="otp-info-banner" id="otp-hint-banner">
+                  🛡️ <b>Tasdiqlash kodi:</b> <span id="otp-code-display" style="letter-spacing: 4px; font-weight:800; font-size:18px;">123456</span>
+                  <div style="font-size: 11px; margin-top: 4px; opacity: 0.85;">(Xavfsizlik maqsadida ushbu kod emailingizga yuborildi)</div>
+                </div>
+
+                <div class="otp-inputs">
+                  <input type="text" class="otp-digit" maxlength="1" data-index="0" autofocus />
+                  <input type="text" class="otp-digit" maxlength="1" data-index="1" />
+                  <input type="text" class="otp-digit" maxlength="1" data-index="2" />
+                  <input type="text" class="otp-digit" maxlength="1" data-index="3" />
+                  <input type="text" class="otp-digit" maxlength="1" data-index="4" />
+                  <input type="text" class="otp-digit" maxlength="1" data-index="5" />
+                </div>
+
+                <button type="button" id="btn-verify-otp" class="auth-submit-btn" style="background:#10b981;">
+                  Tasdiqlash va Kirish
+                </button>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 12px;">
+                  <a href="#" id="btn-back-to-register" style="color: #64748b; text-decoration: none;">← Boshqa email kiritish</a>
+                  <span id="otp-resend-container" style="color: #64748b;">
+                    Qayta yuborish: <span id="otp-timer">60</span>s
+                  </span>
+                  <a href="#" id="btn-resend-otp" style="color: #2563eb; text-decoration: none; display: none; font-weight:600;">Kodni qayta yuborish</a>
+                </div>
+              </div>
+            </div>
+
             <!-- Login Form -->
             <form id="auth-login-form" style="display: none;">
               <div class="auth-input-group">
@@ -599,7 +936,7 @@
               <button type="submit" class="auth-submit-btn">Tizimga Kirish</button>
             </form>
 
-            <div class="auth-divider">yoki</div>
+            <div class="auth-divider" id="auth-divider-line">yoki</div>
 
             <!-- Google Button -->
             <button class="google-btn" id="google-auth-btn">
@@ -656,7 +993,13 @@
               </div>
             </div>
 
-            <div style="margin-top:20px; display:flex; gap:10px;">
+            <div id="profile-admin-btn-container" style="margin-top:14px; display:none;">
+              <button id="btn-open-admin-from-profile" class="auth-submit-btn" style="background:linear-gradient(135deg, #f59e0b, #d97706); display:flex; align-items:center; justify-content:center; gap:8px;">
+                👑 Admin Boshqaruv Panelini Ochish
+              </button>
+            </div>
+
+            <div style="margin-top:16px; display:flex; gap:10px;">
               <button id="btn-open-license-from-profile" class="auth-submit-btn" style="background:#475569;">
                 🛡️ Litsenziya / VIP Kalit
               </button>
@@ -668,8 +1011,175 @@
         </div>
       </div>
 
+      <!-- Admin Modal -->
+      <div id="secplus-admin-modal" class="secplus-modal-overlay">
+        <div class="secplus-modal-card admin-modal-card">
+          <div class="secplus-modal-header">
+            <div class="secplus-modal-title">
+              <span>👑</span> <span>CompTIA Security+ Boshqaruv Paneli (Admin)</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span id="admin-badge-current" style="font-size:12px; background:rgba(245,158,11,0.15); color:#d97706; padding:3px 10px; border-radius:12px; font-weight:700;">Admin</span>
+              <button class="secplus-modal-close" id="close-admin-modal-btn">✕</button>
+            </div>
+          </div>
+          
+          <div class="admin-tabs">
+            <button class="admin-tab-btn active" id="admin-tab-subscribers">👥 Obunachilar Ro'yxati</button>
+            <button class="admin-tab-btn" id="admin-tab-analytics">📊 Statistika</button>
+            <button class="admin-tab-btn" id="admin-tab-settings">⚙️ Baza & Sozlamalar</button>
+          </div>
+
+          <div class="secplus-modal-body" style="padding:16px 20px; overflow-y:auto;">
+            <!-- Tab 1: Obunachilar -->
+            <div id="admin-view-subscribers">
+              <!-- KPIs -->
+              <div class="admin-kpis">
+                <div class="admin-kpi-card">
+                  <div class="admin-kpi-icon" style="background:#dbeafe; color:#2563eb;">👥</div>
+                  <div>
+                    <div style="font-size:11px; color:#64748b; font-weight:600;">Jami Obunachilar</div>
+                    <div style="font-size:20px; font-weight:700;" id="kpi-total-subscribers">0</div>
+                  </div>
+                </div>
+                <div class="admin-kpi-card">
+                  <div class="admin-kpi-icon" style="background:#dcfce7; color:#166534;">💎</div>
+                  <div>
+                    <div style="font-size:11px; color:#64748b; font-weight:600;">VIP Premium A'zolar</div>
+                    <div style="font-size:20px; font-weight:700;" id="kpi-vip-subscribers">0</div>
+                  </div>
+                </div>
+                <div class="admin-kpi-card">
+                  <div class="admin-kpi-icon" style="background:#fef3c7; color:#92400e;">⏱️</div>
+                  <div>
+                    <div style="font-size:11px; color:#64748b; font-weight:600;">Sinov Foydalanuvchilari</div>
+                    <div style="font-size:20px; font-weight:700;" id="kpi-trial-subscribers">0</div>
+                  </div>
+                </div>
+                <div class="admin-kpi-card">
+                  <div class="admin-kpi-icon" style="background:#ede9fe; color:#5b21b6;">⚡</div>
+                  <div>
+                    <div style="font-size:11px; color:#64748b; font-weight:600;">Bugun Qo'shilganlar</div>
+                    <div style="font-size:20px; font-weight:700;" id="kpi-today-subscribers">0</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Toolbar: Search, Filters, Export -->
+              <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap;">
+                <div style="display:flex; gap:8px; flex:1; min-width:240px;">
+                  <input type="text" id="admin-search-input" class="auth-input" placeholder="🔍 Ism yoki email bo'yicha qidirish..." style="padding:8px 12px; font-size:13px;" />
+                </div>
+                <div style="display:flex; gap:8px;">
+                  <button id="admin-btn-export-csv" class="admin-action-btn" style="background:#10b981; color:#fff; border-color:#10b981; display:flex; align-items:center; gap:6px; padding:8px 14px; font-size:12px;">
+                    📥 CSV / Excel Yuklab Olish
+                  </button>
+                  <button id="admin-btn-refresh-subscribers" class="admin-action-btn" style="display:flex; align-items:center; gap:6px; padding:8px 14px; font-size:12px;">
+                    🔄 Yangilash
+                  </button>
+                </div>
+              </div>
+
+              <!-- Subscribers Table -->
+              <div class="admin-table-container">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Foydalanuvchi</th>
+                      <th>Ro'yxatdan o'tgan</th>
+                      <th>Usul</th>
+                      <th>Obuna Holati</th>
+                      <th>Test / Natijasi</th>
+                      <th style="text-align:right;">Boshqarish</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-subscribers-tbody">
+                    <!-- Rendered dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Tab 2: Analytics -->
+            <div id="admin-view-analytics" style="display:none;">
+              <div class="admin-kpis">
+                <div class="admin-kpi-card">
+                  <div class="admin-kpi-icon" style="background:#e0e7ff; color:#4338ca;">📝</div>
+                  <div>
+                    <div style="font-size:11px; color:#64748b; font-weight:600;">Jami Savollar Bazasi</div>
+                    <div style="font-size:20px; font-weight:700;">230+ (90 Mock + 140 Dumps)</div>
+                  </div>
+                </div>
+                <div class="admin-kpi-card">
+                  <div class="admin-kpi-icon" style="background:#fce7f3; color:#9d174d;">📊</div>
+                  <div>
+                    <div style="font-size:11px; color:#64748b; font-weight:600;">O'rtacha Sinov Natijasi</div>
+                    <div style="font-size:20px; font-weight:700;" id="kpi-avg-score">82%</div>
+                  </div>
+                </div>
+              </div>
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-top:12px;">
+                <h4 style="margin:0 0 8px 0;">Platforma Faolligi haqida</h4>
+                <p style="font-size:13px; color:#64748b; margin:0 0 10px 0;">
+                  CompTIA Security+ (SY0-701) platformasida har bir obunachining imtihon topshirish holati, sarflagan vaqti va xatcho'plari real vaqtda kuzatib boriladi.
+                </p>
+                <ul style="font-size:13px; color:#475569; padding-left:20px; line-height:1.6;">
+                  <li>Foydalanuvchilar ro'yxatdan o'tgach 6 soatlik to'liq sinov (trial) muddati bilan ta'minlanadi.</li>
+                  <li>Admin panel orqali xohlagan foydalanuvchiga bir tugma orqali doimiy <b>VIP Premium</b> berish yoki sinov muddatini uzaytirish mumkin.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Tab 3: Settings & Firebase Config -->
+            <div id="admin-view-settings" style="display:none;">
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px; margin-bottom:16px;">
+                <h4 style="margin:0 0 8px 0; display:flex; align-items:center; gap:8px;">
+                  <span>☁️</span> Firebase Firestore Bulutli Baza Sozlamalari
+                </h4>
+                <p style="font-size:12px; color:#64748b; margin:0 0 12px 0;">
+                  Barcha turli qurilmalardan (boshqa odamlar telefon yoki kompyuterlaridan) ro'yxatdan o'tgan foydalanuvchilarni bitta umumiy bazada ko'rib turish uchun bepul Firebase loyihangiz ma'lumotlarini shu yerga kiriting:
+                </p>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:10px;">
+                  <div class="auth-input-group">
+                    <label class="auth-input-label">Firebase API Key</label>
+                    <input type="text" id="cfg-firebase-api-key" class="auth-input" placeholder="AIzaSy..." />
+                  </div>
+                  <div class="auth-input-group">
+                    <label class="auth-input-label">Project ID</label>
+                    <input type="text" id="cfg-firebase-project-id" class="auth-input" placeholder="securityplus-..." />
+                  </div>
+                  <div class="auth-input-group">
+                    <label class="auth-input-label">Auth Domain</label>
+                    <input type="text" id="cfg-firebase-auth-domain" class="auth-input" placeholder="securityplus-...firebaseapp.com" />
+                  </div>
+                </div>
+                <button type="button" id="btn-save-firebase-cfg" class="auth-submit-btn" style="background:#2563eb; width:auto; padding:8px 20px; font-size:13px; margin-top:8px;">
+                  💾 Bulutli Baza Sozlamalarini Saqlash
+                </button>
+              </div>
+
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:16px;">
+                <h4 style="margin:0 0 8px 0;">👑 Qo'shimcha Admin Gmail Manzillar</h4>
+                <p style="font-size:12px; color:#64748b; margin:0 0 12px 0;">
+                  Admin huquqiga ega bo'ladigan qo'shimcha emaillarni kiriting (vergul bilan ajrating):
+                </p>
+                <div class="auth-input-group">
+                  <input type="text" id="cfg-admin-emails-input" class="auth-input" placeholder="masalan: quvonchbekeditz@gmail.com, boshqa@gmail.com" />
+                </div>
+                <button type="button" id="btn-save-admin-emails" class="auth-submit-btn" style="background:#f59e0b; width:auto; padding:8px 20px; font-size:13px; margin-top:8px;">
+                  💾 Admin Emaillarni Saqlash
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Dropdown Menu -->
       <div id="secplus-auth-dropdown" class="auth-dropdown-menu">
+        <button class="auth-dropdown-item" id="dropdown-item-admin" style="color:#f59e0b; font-weight:700; display:none;">
+          <span>👑</span> Admin Boshqaruv Paneli
+        </button>
         <button class="auth-dropdown-item" id="dropdown-item-profile">
           <span>👤</span> Mening Profilim
         </button>
@@ -706,7 +1216,7 @@
       `;
       const btn = document.getElementById('header-auth-trigger-btn');
       if (btn) {
-        btn.onclick = openAuthModal;
+        btn.onclick = function () { openAuthModal(); };
       }
     } else {
       const initials = (currentUser.name || 'U').split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
@@ -714,16 +1224,27 @@
         ? `<img src="${currentUser.photoURL}" alt="${currentUser.name}" />`
         : initials;
 
+      const isAdmin = isAdminUser(currentUser);
+
       profileContainer.innerHTML = `
+        ${isAdmin ? `<button class="admin-badge-btn" id="header-admin-btn" title="Admin Boshqaruv Paneli">👑 Admin Panel</button>` : ''}
         <div class="user-profile-btn" id="header-user-btn" title="Shaxsiy Kabinet">
           <div class="user-profile-avatar">${avatarContent}</div>
           <div class="user-profile-details">
             <span class="user-profile-name">${currentUser.name}</span>
-            <span class="user-profile-badge">● Online</span>
+            <span class="user-profile-badge">${isAdmin ? '👑 Admin' : '● Online'}</span>
           </div>
           <span style="font-size:11px; color:#94a3b8;">▼</span>
         </div>
       `;
+
+      const headerAdminBtn = document.getElementById('header-admin-btn');
+      if (headerAdminBtn) {
+        headerAdminBtn.onclick = function (e) {
+          e.stopPropagation();
+          openAdminModal();
+        };
+      }
 
       const userBtn = document.getElementById('header-user-btn');
       if (userBtn) {
@@ -731,6 +1252,21 @@
           e.stopPropagation();
           toggleDropdown();
         };
+      }
+
+      // Update dropdown admin item
+      const dropAdmin = document.getElementById('dropdown-item-admin');
+      if (dropAdmin) {
+        dropAdmin.style.display = isAdmin ? 'flex' : 'none';
+        dropAdmin.onclick = function () {
+          openAdminModal();
+        };
+      }
+
+      // Update profile modal admin container
+      const profAdminContainer = document.getElementById('profile-admin-btn-container');
+      if (profAdminContainer) {
+        profAdminContainer.style.display = isAdmin ? 'block' : 'none';
       }
     }
   }
@@ -750,17 +1286,43 @@
   });
 
   // --- Modal Open/Close Logic ---
+  function resetAuthModalView() {
+    const tabsBar = document.getElementById('auth-tabs-bar');
+    const formReg = document.getElementById('auth-register-form');
+    const formLogin = document.getElementById('auth-login-form');
+    const otpStep = document.getElementById('auth-otp-step');
+    const divider = document.getElementById('auth-divider-line');
+    const googleBtn = document.getElementById('google-auth-btn');
+
+    if (tabsBar) tabsBar.style.display = 'flex';
+    if (formReg) formReg.style.display = 'block';
+    if (formLogin) formLogin.style.display = 'none';
+    if (otpStep) otpStep.style.display = 'none';
+    if (divider) divider.style.display = 'flex';
+    if (googleBtn) googleBtn.style.display = 'flex';
+
+    const tabReg = document.getElementById('tab-btn-register');
+    const tabLog = document.getElementById('tab-btn-login');
+    if (tabReg && tabLog) {
+      tabReg.classList.add('active');
+      tabLog.classList.remove('active');
+    }
+
+    if (otpTimerInterval) {
+      clearInterval(otpTimerInterval);
+      otpTimerInterval = null;
+    }
+    pendingRegistration = null;
+  }
+
   function openAuthModal(isMandatory) {
     const modal = document.getElementById('secplus-auth-modal');
     if (modal) {
       clearAuthAlerts();
+      resetAuthModalView();
       const closeBtn = document.getElementById('close-auth-modal-btn');
       if (closeBtn) {
         closeBtn.style.display = (!currentUser || isMandatory) ? 'none' : 'block';
-      }
-      const tabRegister = document.getElementById('tab-btn-register');
-      if (tabRegister && (!currentUser || isMandatory)) {
-        tabRegister.click();
       }
       modal.classList.add('open');
     }
@@ -783,6 +1345,7 @@
     const avatar = document.getElementById('modal-avatar');
     const nameEl = document.getElementById('modal-user-name');
     const emailEl = document.getElementById('modal-user-email');
+    const badgeEl = document.getElementById('modal-user-badge');
     const initials = (currentUser.name || 'U').split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
 
     if (avatar) {
@@ -792,6 +1355,18 @@
     }
     if (nameEl) nameEl.textContent = currentUser.name;
     if (emailEl) emailEl.textContent = currentUser.email;
+
+    const isAdmin = isAdminUser(currentUser);
+    if (badgeEl) {
+      badgeEl.innerHTML = isAdmin 
+        ? `<span style="font-size:11px; padding:2px 8px; border-radius:10px; background:#fef3c7; color:#b45309; font-weight:700;">👑 Tizim Admini</span>`
+        : `<span style="font-size:11px; padding:2px 8px; border-radius:10px; background:#dcfce7; color:#15803d; font-weight:600;">Faol Talaba</span>`;
+    }
+
+    const profAdminContainer = document.getElementById('profile-admin-btn-container');
+    if (profAdminContainer) {
+      profAdminContainer.style.display = isAdmin ? 'block' : 'none';
+    }
 
     // Fill stats from localStorage
     try {
@@ -803,7 +1378,7 @@
       document.getElementById('stat-solved-count').textContent = solved;
       document.getElementById('stat-score-percent').textContent = score;
       document.getElementById('stat-bookmarks-count').textContent = bookmarks;
-      document.getElementById('stat-license-tier').textContent = isPremium ? 'Premium' : 'Sinov (30m)';
+      document.getElementById('stat-license-tier').textContent = isPremium ? 'Premium (VIP)' : 'Sinov (6 soat)';
     } catch (e) {}
 
     modal.classList.add('open');
@@ -812,6 +1387,226 @@
   function closeProfileModal() {
     const modal = document.getElementById('secplus-profile-modal');
     if (modal) modal.classList.remove('open');
+  }
+
+  // --- Admin Modal Logic ---
+  function openAdminModal() {
+    if (!isAdminUser(currentUser)) {
+      alert('Kechirasiz, ushbu bo\'lim faqat Admin hisobi uchun mo\'ljallangan!');
+      return;
+    }
+
+    const modal = document.getElementById('secplus-admin-modal');
+    if (!modal) return;
+
+    const currentBadge = document.getElementById('admin-badge-current');
+    if (currentBadge && currentUser) {
+      currentBadge.textContent = 'Admin: ' + currentUser.email;
+    }
+
+    // Populate admin email config input
+    const adminEmailsInput = document.getElementById('cfg-admin-emails-input');
+    if (adminEmailsInput) {
+      adminEmailsInput.value = getAdminEmails().join(', ');
+    }
+
+    // Populate Firebase config inputs
+    const fbApiKey = document.getElementById('cfg-firebase-api-key');
+    const fbProjId = document.getElementById('cfg-firebase-project-id');
+    const fbAuthDom = document.getElementById('cfg-firebase-auth-domain');
+    if (fbApiKey) fbApiKey.value = FIREBASE_CONFIG.apiKey || '';
+    if (fbProjId) fbProjId.value = FIREBASE_CONFIG.projectId || '';
+    if (fbAuthDom) fbAuthDom.value = FIREBASE_CONFIG.authDomain || '';
+
+    renderAdminSubscribers();
+    modal.classList.add('open');
+  }
+
+  function closeAdminModal() {
+    const modal = document.getElementById('secplus-admin-modal');
+    if (modal) modal.classList.remove('open');
+  }
+
+  function renderAdminSubscribers(searchQuery) {
+    const tbody = document.getElementById('admin-subscribers-tbody');
+    if (!tbody) return;
+
+    let vault = getUsersVault();
+    const q = (searchQuery || '').toLowerCase().trim();
+
+    if (q) {
+      vault = vault.filter(u => 
+        (u.name && u.name.toLowerCase().includes(q)) || 
+        (u.email && u.email.toLowerCase().includes(q))
+      );
+    }
+
+    // Update KPIs
+    const allUsers = getUsersVault();
+    const totalCount = allUsers.length;
+    const vipCount = allUsers.filter(u => u.licenseTier === 'PREMIUM').length;
+    const trialCount = allUsers.filter(u => u.licenseTier !== 'PREMIUM').length;
+
+    const todayStr = new Date().toISOString().split('T')[0];
+    const todayCount = allUsers.filter(u => u.createdAt && u.createdAt.startsWith(todayStr)).length;
+
+    const elTotal = document.getElementById('kpi-total-subscribers');
+    const elVip = document.getElementById('kpi-vip-subscribers');
+    const elTrial = document.getElementById('kpi-trial-subscribers');
+    const elToday = document.getElementById('kpi-today-subscribers');
+
+    if (elTotal) elTotal.textContent = totalCount;
+    if (elVip) elVip.textContent = vipCount;
+    if (elTrial) elTrial.textContent = trialCount;
+    if (elToday) elToday.textContent = todayCount;
+
+    if (vault.length === 0) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="6" style="text-align:center; padding:30px; color:#94a3b8;">
+            Hech qanday obunachi topilmadi.
+          </td>
+        </tr>
+      `;
+      return;
+    }
+
+    tbody.innerHTML = vault.map(user => {
+      const isVip = user.licenseTier === 'PREMIUM';
+      const isGoogle = user.provider && user.provider.includes('google');
+      const isBlocked = user.status === 'blocked';
+      const dateStr = user.createdAt ? new Date(user.createdAt).toLocaleDateString('uz-UZ') : 'Noma\'lum';
+      const solved = user.solvedQuestions !== undefined ? user.solvedQuestions : 0;
+      const score = user.score || '0%';
+
+      return `
+        <tr data-uid="${user.uid}">
+          <td>
+            <div style="display:flex; align-items:center; gap:10px;">
+              <div class="user-profile-avatar" style="width:32px; height:32px; font-size:11px;">
+                ${(user.name || 'U').substring(0, 2).toUpperCase()}
+              </div>
+              <div>
+                <div style="font-weight:600; color:#1e293b;" class="dark-mode-text">${user.name || 'Foydalanuvchi'}</div>
+                <div style="font-size:11px; color:#64748b;">${user.email}</div>
+              </div>
+            </div>
+          </td>
+          <td>${dateStr}</td>
+          <td>
+            <span class="admin-badge ${isGoogle ? 'admin-badge-google' : 'admin-badge-email'}">
+              ${isGoogle ? '🌐 Google' : '📧 Email'}
+            </span>
+          </td>
+          <td>
+            <span class="admin-badge ${isBlocked ? 'admin-badge-blocked' : (isVip ? 'admin-badge-vip' : 'admin-badge-trial')}">
+              ${isBlocked ? '🚫 Bloklangan' : (isVip ? '💎 VIP Premium' : '⏱️ Sinov (Trial)')}
+            </span>
+          </td>
+          <td>
+            <div style="font-size:12px; font-weight:600;">${solved} ta savol</div>
+            <div style="font-size:11px; color:#10b981;">Natija: ${score}</div>
+          </td>
+          <td style="text-align:right;">
+            <div style="display:inline-flex; gap:6px;">
+              <button class="admin-action-btn btn-action-vip" data-uid="${user.uid}" title="${isVip ? 'VIP o\'chirish' : 'VIP berish'}">
+                ${isVip ? '↩️ Sinovga' : '💎 VIP qilish'}
+              </button>
+              <button class="admin-action-btn btn-action-block" data-uid="${user.uid}" style="color:${isBlocked ? '#10b981' : '#f59e0b'};" title="Holat">
+                ${isBlocked ? '✅ Ochiq' : '🚫 Blok'}
+              </button>
+              <button class="admin-action-btn btn-action-delete" data-uid="${user.uid}" style="color:#ef4444;" title="O'chirish">
+                🗑️
+              </button>
+            </div>
+          </td>
+        </tr>
+      `;
+    }).join('');
+
+    // Bind action buttons
+    tbody.querySelectorAll('.btn-action-vip').forEach(btn => {
+      btn.onclick = function () {
+        const uid = this.getAttribute('data-uid');
+        toggleUserVip(uid);
+      };
+    });
+
+    tbody.querySelectorAll('.btn-action-block').forEach(btn => {
+      btn.onclick = function () {
+        const uid = this.getAttribute('data-uid');
+        toggleUserBlock(uid);
+      };
+    });
+
+    tbody.querySelectorAll('.btn-action-delete').forEach(btn => {
+      btn.onclick = function () {
+        const uid = this.getAttribute('data-uid');
+        deleteUser(uid);
+      };
+    });
+  }
+
+  function toggleUserVip(uid) {
+    const vault = getUsersVault();
+    const user = vault.find(u => u.uid === uid);
+    if (user) {
+      user.licenseTier = user.licenseTier === 'PREMIUM' ? 'TRIAL' : 'PREMIUM';
+      saveUsersVault(vault);
+      if (currentUser && currentUser.uid === uid) {
+        localStorage.setItem('secplus_license_status', user.licenseTier === 'PREMIUM' ? 'ACTIVE' : 'TRIAL');
+      }
+      renderAdminSubscribers(document.getElementById('admin-search-input')?.value);
+    }
+  }
+
+  function toggleUserBlock(uid) {
+    const vault = getUsersVault();
+    const user = vault.find(u => u.uid === uid);
+    if (user) {
+      user.status = user.status === 'blocked' ? 'active' : 'blocked';
+      saveUsersVault(vault);
+      renderAdminSubscribers(document.getElementById('admin-search-input')?.value);
+    }
+  }
+
+  function deleteUser(uid) {
+    if (!confirm('Haqiqatan ham ushbu obunachini o\'chirmoqchimisiz?')) return;
+    let vault = getUsersVault();
+    vault = vault.filter(u => u.uid !== uid);
+    saveUsersVault(vault);
+    renderAdminSubscribers(document.getElementById('admin-search-input')?.value);
+  }
+
+  function exportSubscribersToCSV() {
+    const vault = getUsersVault();
+    if (!vault.length) {
+      alert('Eksport qilish uchun obunachilar mavjud emas.');
+      return;
+    }
+
+    const headers = ['ID', 'Ism-Familiya', 'Email', 'Kirish Usuli', 'Obuna Holati', 'Yechilgan Testlar', 'O\'rtacha Natija', 'Ro\'yxatdan O\'tgan Sana'];
+    const rows = vault.map(u => [
+      u.uid || '',
+      `"${(u.name || '').replace(/"/g, '""')}"`,
+      `"${(u.email || '').replace(/"/g, '""')}"`,
+      u.provider || 'email',
+      u.licenseTier || 'TRIAL',
+      u.solvedQuestions || 0,
+      u.score || '0%',
+      u.createdAt || ''
+    ]);
+
+    const csvContent = '\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\r\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `securityplus_obunachilar_${new Date().toISOString().split('T')[0]}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   }
 
   function showAuthError(msg) {
@@ -873,6 +1668,9 @@
     const closeProfile = document.getElementById('close-profile-modal-btn');
     if (closeProfile) closeProfile.onclick = closeProfileModal;
 
+    const closeAdmin = document.getElementById('close-admin-modal-btn');
+    if (closeAdmin) closeAdmin.onclick = closeAdminModal;
+
     // Dropdown items
     const dropProfile = document.getElementById('dropdown-item-profile');
     if (dropProfile) dropProfile.onclick = function () {
@@ -913,7 +1711,15 @@
       }
     };
 
-    // Form Submit: Register
+    const btnOpenAdminProf = document.getElementById('btn-open-admin-from-profile');
+    if (btnOpenAdminProf) {
+      btnOpenAdminProf.onclick = function () {
+        closeProfileModal();
+        openAdminModal();
+      };
+    }
+
+    // --- Form Submit: Register with 6-Digit OTP ---
     if (formRegister) {
       formRegister.onsubmit = function (e) {
         e.preventDefault();
@@ -927,48 +1733,187 @@
           return;
         }
 
-        // 1. Try Firebase if initialized
-        if (isFirebaseReady && typeof firebase !== 'undefined') {
-          firebase.auth().createUserWithEmailAndPassword(email, pass)
-            .then(function (cred) {
-              return cred.user.updateProfile({ displayName: name });
-            })
-            .then(function () {
-              showAuthSuccess('Tabriklaymiz! Ro\'yxatdan muvaffaqiyatli o\'tdingiz.');
-              setTimeout(closeAuthModal, 1200);
-            })
-            .catch(function (err) {
-              showAuthError(err.message || 'Ro\'yxatdan o\'tishda xatolik yuz berdi.');
-            });
-          return;
-        }
-
-        // 2. Local Secure Vault Fallback
         const vault = getUsersVault();
         const existing = vault.find(u => u.email === email);
         if (existing) {
-          showAuthError('Ushbu email bilan avval ro\'yxatdan o\'tilgan. Iltimos, tizimga kiring.');
+          showAuthError('Ushbu email bilan avval ro\'yxatdan o\'tilgan. Iltimos, "Kirish" bo\'limidan kiring.');
           return;
         }
 
-        const newUser = {
-          uid: 'USR-' + Date.now().toString(36).toUpperCase(),
+        // Generate 6-digit OTP code
+        const code = Math.floor(100000 + Math.random() * 900000).toString();
+        pendingRegistration = {
           name: name,
           email: email,
-          passHash: hashPassword(pass),
+          pass: pass,
+          code: code,
           createdAt: new Date().toISOString()
+        };
+
+        // Transition to OTP view
+        document.getElementById('auth-tabs-bar').style.display = 'none';
+        formRegister.style.display = 'none';
+        document.getElementById('auth-divider-line').style.display = 'none';
+        document.getElementById('google-auth-btn').style.display = 'none';
+
+        const otpStep = document.getElementById('auth-otp-step');
+        otpStep.style.display = 'block';
+        document.getElementById('otp-sent-email').textContent = email;
+        document.getElementById('otp-code-display').textContent = code;
+
+        // Clear previous digit inputs
+        const digitInputs = otpStep.querySelectorAll('.otp-digit');
+        digitInputs.forEach(inp => inp.value = '');
+        if (digitInputs[0]) digitInputs[0].focus();
+
+        // Start 60s timer
+        let timeLeft = 60;
+        const timerSpan = document.getElementById('otp-timer');
+        const resendContainer = document.getElementById('otp-resend-container');
+        const btnResend = document.getElementById('btn-resend-otp');
+
+        if (resendContainer) resendContainer.style.display = 'inline';
+        if (btnResend) btnResend.style.display = 'none';
+        if (timerSpan) timerSpan.textContent = timeLeft;
+
+        if (otpTimerInterval) clearInterval(otpTimerInterval);
+        otpTimerInterval = setInterval(function () {
+          timeLeft--;
+          if (timerSpan) timerSpan.textContent = timeLeft;
+          if (timeLeft <= 0) {
+            clearInterval(otpTimerInterval);
+            if (resendContainer) resendContainer.style.display = 'none';
+            if (btnResend) btnResend.style.display = 'inline';
+          }
+        }, 1000);
+
+        showAuthSuccess('Tasdiqlash kodi tayyorlandi. Iltimos, kodni kiriting!');
+      };
+    }
+
+    // OTP Input Navigation & Paste Handling
+    const digitInputs = document.querySelectorAll('.otp-digit');
+    digitInputs.forEach((input, idx) => {
+      input.addEventListener('input', function (e) {
+        if (this.value.length === 1 && idx < digitInputs.length - 1) {
+          digitInputs[idx + 1].focus();
+        }
+      });
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Backspace' && !this.value && idx > 0) {
+          digitInputs[idx - 1].focus();
+        }
+      });
+      input.addEventListener('paste', function (e) {
+        e.preventDefault();
+        const pasteData = (e.clipboardData || window.clipboardData).getData('text').trim();
+        if (/^\d{6}$/.test(pasteData)) {
+          pasteData.split('').forEach((digit, i) => {
+            if (digitInputs[i]) digitInputs[i].value = digit;
+          });
+          if (digitInputs[5]) digitInputs[5].focus();
+        }
+      });
+    });
+
+    // OTP Verification Button
+    const btnVerifyOtp = document.getElementById('btn-verify-otp');
+    if (btnVerifyOtp) {
+      btnVerifyOtp.onclick = function () {
+        if (!pendingRegistration) {
+          showAuthError('Ro\'yxatdan o\'tish ma\'lumotlari topilmadi. Iltimos qaytadan urinib ko\'ring.');
+          return;
+        }
+
+        let enteredCode = '';
+        digitInputs.forEach(inp => enteredCode += inp.value.trim());
+
+        if (enteredCode.length < 6) {
+          showAuthError('Iltimos, to\'liq 6 xonali tasdiqlash kodini kiriting!');
+          return;
+        }
+
+        if (enteredCode !== pendingRegistration.code) {
+          showAuthError('Tasdiqlash kodi noto\'g\'ri kiritildi. Iltimos tekshirib qayta kiriting!');
+          return;
+        }
+
+        // OTP Verified successfully! Register user
+        const vault = getUsersVault();
+        const isAdmin = isAdminUser({ email: pendingRegistration.email });
+        const newUser = {
+          uid: 'USR-' + Date.now().toString(36).toUpperCase(),
+          name: pendingRegistration.name,
+          email: pendingRegistration.email,
+          passHash: hashPassword(pendingRegistration.pass),
+          licenseTier: isAdmin ? 'PREMIUM' : 'TRIAL',
+          status: 'active',
+          solvedQuestions: 0,
+          score: '0%',
+          provider: 'email',
+          createdAt: pendingRegistration.createdAt
         };
 
         vault.push(newUser);
         saveUsersVault(vault);
         saveLocalSession(newUser);
 
-        showAuthSuccess('Tabriklaymiz! Akkauntingiz muvaffaqiyatli yaratildi.');
+        if (isAdmin) {
+          localStorage.setItem('secplus_license_status', 'ACTIVE');
+          showAuthSuccess('Tabriklaymiz! Emailingiz tasdiqlandi. Sizga 👑 Admin huquqi berildi!');
+        } else {
+          showAuthSuccess('Tabriklaymiz! Emailingiz muvaffaqiyatli tasdiqlandi va hisobingiz yaratildi.');
+        }
+
         setTimeout(closeAuthModal, 1200);
       };
     }
 
-    // Form Submit: Login
+    // Back to Register from OTP
+    const btnBackReg = document.getElementById('btn-back-to-register');
+    if (btnBackReg) {
+      btnBackReg.onclick = function (e) {
+        e.preventDefault();
+        resetAuthModalView();
+      };
+    }
+
+    // Resend OTP
+    const btnResend = document.getElementById('btn-resend-otp');
+    if (btnResend) {
+      btnResend.onclick = function (e) {
+        e.preventDefault();
+        if (!pendingRegistration) return;
+        const newCode = Math.floor(100000 + Math.random() * 900000).toString();
+        pendingRegistration.code = newCode;
+        document.getElementById('otp-code-display').textContent = newCode;
+
+        digitInputs.forEach(inp => inp.value = '');
+        if (digitInputs[0]) digitInputs[0].focus();
+
+        let timeLeft = 60;
+        const timerSpan = document.getElementById('otp-timer');
+        const resendContainer = document.getElementById('otp-resend-container');
+        if (resendContainer) resendContainer.style.display = 'inline';
+        btnResend.style.display = 'none';
+        if (timerSpan) timerSpan.textContent = timeLeft;
+
+        if (otpTimerInterval) clearInterval(otpTimerInterval);
+        otpTimerInterval = setInterval(function () {
+          timeLeft--;
+          if (timerSpan) timerSpan.textContent = timeLeft;
+          if (timeLeft <= 0) {
+            clearInterval(otpTimerInterval);
+            if (resendContainer) resendContainer.style.display = 'none';
+            btnResend.style.display = 'inline';
+          }
+        }, 1000);
+
+        showAuthSuccess('Yangi tasdiqlash kodi yuborildi!');
+      };
+    }
+
+    // --- Form Submit: Login ---
     if (formLogin) {
       formLogin.onsubmit = function (e) {
         e.preventDefault();
@@ -996,13 +1941,22 @@
           return;
         }
 
+        if (user.status === 'blocked') {
+          showAuthError('Ushbu akkaunt bloklangan. Iltimos admin bilan bog\'laning.');
+          return;
+        }
+
         saveLocalSession(user);
-        showAuthSuccess('Xush kelibsiz! Tizimga muvaffaqiyatli kirdingiz.');
+        if (isAdminUser(user)) {
+          showAuthSuccess('Xush kelibsiz, 👑 Admin! Tizimga muvaffaqiyatli kirdingiz.');
+        } else {
+          showAuthSuccess('Xush kelibsiz! Tizimga muvaffaqiyatli kirdingiz.');
+        }
         setTimeout(closeAuthModal, 1000);
       };
     }
 
-    // Google Sign-In button
+    // --- Google Sign-In button ---
     const googleBtn = document.getElementById('google-auth-btn');
     if (googleBtn) {
       googleBtn.onclick = function () {
@@ -1017,24 +1971,145 @@
               showAuthError(err.message || 'Google orqali kirish bekor qilindi.');
             });
         } else {
-          // Demo / Quick Sign-In
-          const name = prompt('Google profilingizdagi Ismingizni kiriting:', 'Talaba');
-          if (name) {
-            const email = prompt('Google emailingizni kiriting:', 'user@gmail.com');
-            if (email) {
-              const demoUser = {
-                uid: 'GGL-' + Date.now().toString(36).toUpperCase(),
-                name: name,
-                email: email,
-                provider: 'google.com',
-                createdAt: new Date().toISOString()
-              };
-              saveLocalSession(demoUser);
-              showAuthSuccess('Google profilingiz muvaffaqiyatli ulandi!');
-              setTimeout(closeAuthModal, 1000);
-            }
+          // Google Fast Sign-In / Account Selection
+          const userEmail = prompt(
+            'Google hisobi orqali kirishda alohida tasdiqlash kodi talab qilinmaydi (Google buni avtomatik tasdiqlaydi).\n\nGoogle Gmail manzilingizni kiriting:',
+            'quvonchbekeditz@gmail.com'
+          );
+          if (!userEmail) return;
+
+          const cleanEmail = userEmail.trim().toLowerCase();
+          const userName = prompt('Google profilingizdagi Ism va Familiyangizni kiriting:', 'Quvonchbek') || 'Talaba';
+
+          const vault = getUsersVault();
+          let existingUser = vault.find(u => u.email === cleanEmail);
+
+          if (!existingUser) {
+            const isAdmin = isAdminUser({ email: cleanEmail });
+            existingUser = {
+              uid: 'GGL-' + Date.now().toString(36).toUpperCase(),
+              name: userName,
+              email: cleanEmail,
+              provider: 'google.com',
+              licenseTier: isAdmin ? 'PREMIUM' : 'TRIAL',
+              status: 'active',
+              solvedQuestions: 0,
+              score: '0%',
+              createdAt: new Date().toISOString()
+            };
+            vault.push(existingUser);
+            saveUsersVault(vault);
           }
+
+          saveLocalSession(existingUser);
+          if (isAdminUser(existingUser)) {
+            localStorage.setItem('secplus_license_status', 'ACTIVE');
+            showAuthSuccess('Google profilingiz orqali 👑 Admin sifatida kirdingiz!');
+          } else {
+            showAuthSuccess('Google profilingiz muvaffaqiyatli ulandi!');
+          }
+          setTimeout(closeAuthModal, 1000);
         }
+      };
+    }
+
+    // --- Admin Dashboard Tabs & Controls ---
+    const tabAdminSubscribers = document.getElementById('admin-tab-subscribers');
+    const tabAdminAnalytics = document.getElementById('admin-tab-analytics');
+    const tabAdminSettings = document.getElementById('admin-tab-settings');
+
+    const viewAdminSubscribers = document.getElementById('admin-view-subscribers');
+    const viewAdminAnalytics = document.getElementById('admin-view-analytics');
+    const viewAdminSettings = document.getElementById('admin-view-settings');
+
+    if (tabAdminSubscribers && tabAdminAnalytics && tabAdminSettings) {
+      tabAdminSubscribers.onclick = function () {
+        tabAdminSubscribers.classList.add('active');
+        tabAdminAnalytics.classList.remove('active');
+        tabAdminSettings.classList.remove('active');
+        viewAdminSubscribers.style.display = 'block';
+        viewAdminAnalytics.style.display = 'none';
+        viewAdminSettings.style.display = 'none';
+      };
+      tabAdminAnalytics.onclick = function () {
+        tabAdminAnalytics.classList.add('active');
+        tabAdminSubscribers.classList.remove('active');
+        tabAdminSettings.classList.remove('active');
+        viewAdminSubscribers.style.display = 'none';
+        viewAdminAnalytics.style.display = 'block';
+        viewAdminSettings.style.display = 'none';
+      };
+      tabAdminSettings.onclick = function () {
+        tabAdminSettings.classList.add('active');
+        tabAdminSubscribers.classList.remove('active');
+        tabAdminAnalytics.classList.remove('active');
+        viewAdminSubscribers.style.display = 'none';
+        viewAdminAnalytics.style.display = 'none';
+        viewAdminSettings.style.display = 'block';
+      };
+    }
+
+    // Search input
+    const searchInput = document.getElementById('admin-search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        renderAdminSubscribers(this.value);
+      });
+    }
+
+    // Export CSV
+    const btnExportCSV = document.getElementById('admin-btn-export-csv');
+    if (btnExportCSV) {
+      btnExportCSV.onclick = exportSubscribersToCSV;
+    }
+
+    // Refresh Subscribers
+    const btnRefreshSubscribers = document.getElementById('admin-btn-refresh-subscribers');
+    if (btnRefreshSubscribers) {
+      btnRefreshSubscribers.onclick = function () {
+        renderAdminSubscribers(searchInput ? searchInput.value : '');
+        alert('Obunachilar ro\'yxati yangilandi!');
+      };
+    }
+
+    // Save Firebase Config from Admin Panel
+    const btnSaveFbCfg = document.getElementById('btn-save-firebase-cfg');
+    if (btnSaveFbCfg) {
+      btnSaveFbCfg.onclick = function () {
+        const apiKey = document.getElementById('cfg-firebase-api-key').value.trim();
+        const projId = document.getElementById('cfg-firebase-project-id').value.trim();
+        const authDom = document.getElementById('cfg-firebase-auth-domain').value.trim();
+
+        if (!apiKey || !projId) {
+          alert('Iltimos kamida Firebase API Key va Project ID ni kiriting!');
+          return;
+        }
+
+        const newCfg = {
+          apiKey: apiKey,
+          authDomain: authDom || `${projId}.firebaseapp.com`,
+          projectId: projId,
+          storageBucket: `${projId}.appspot.com`,
+          messagingSenderId: "",
+          appId: ""
+        };
+
+        window.__FIREBASE_CONFIG__ = newCfg;
+        localStorage.setItem('secplus_firebase_cfg', JSON.stringify(newCfg));
+        initFirebase();
+        alert('Firebase sozlamalari muvaffaqiyatli saqlandi!');
+      };
+    }
+
+    // Save Admin Emails from Admin Panel
+    const btnSaveAdminEmails = document.getElementById('btn-save-admin-emails');
+    if (btnSaveAdminEmails) {
+      btnSaveAdminEmails.onclick = function () {
+        const val = document.getElementById('cfg-admin-emails-input').value.trim();
+        const emails = val.split(',').map(e => e.trim().toLowerCase()).filter(Boolean);
+        localStorage.setItem('secplus_admin_emails', JSON.stringify(emails));
+        alert('Admin email manzillari saqlandi!');
+        updateHeaderUI();
       };
     }
   }
@@ -1055,7 +2130,9 @@
   window.__SecurityPlusAuth__ = {
     openAuthModal: openAuthModal,
     openProfileModal: openProfileModal,
+    openAdminModal: openAdminModal,
     getCurrentUser: function () { return currentUser; },
+    isAdmin: function () { return isAdminUser(currentUser); },
     logout: clearLocalSession,
     setFirebaseConfig: function (config) {
       window.__FIREBASE_CONFIG__ = config;
@@ -1063,3 +2140,4 @@
     }
   };
 })();
+

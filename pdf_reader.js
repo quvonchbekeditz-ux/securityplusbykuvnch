@@ -10,7 +10,7 @@
   const STORAGE_KEY_READER_THEME = 'comptia_pdf_theme_v1';
 
   let pdfDoc = null;
-  let currentBookKey = 'guide'; // 'guide' | 'dumps'
+  let currentBookKey = 'dumps'; // 'dumps'
   let pageNum = 1;
   let pageRendering = false;
   let pageNumPending = null;
@@ -156,16 +156,18 @@
     if (!dom.readerWrapper) initDom();
     if (!dom.readerWrapper) return;
 
-    currentBookKey = bookKey || 'guide';
-    const book = BOOKS[currentBookKey];
+    currentBookKey = (bookKey === 'guide' ? 'dumps' : bookKey) || 'dumps';
+    const book = BOOKS[currentBookKey] || BOOKS.dumps;
     if (!book) return;
 
     if (dom.catalogView) dom.catalogView.style.display = 'none';
     dom.readerWrapper.style.display = 'flex';
     dom.readerWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    if (dom.tabGuide && dom.tabDumps) {
+    if (dom.tabGuide) {
       dom.tabGuide.classList.toggle('active', currentBookKey === 'guide');
+    }
+    if (dom.tabDumps) {
       dom.tabDumps.classList.toggle('active', currentBookKey === 'dumps');
     }
 

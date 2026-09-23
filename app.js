@@ -1180,9 +1180,6 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         <div style="display:flex;gap:6px;flex-wrap:wrap;">
-          <button type="button" class="drawer-book-btn" onclick="window.openEmbeddedPdfReader && window.openEmbeddedPdfReader('guide')">
-            📖 ${currentLang === 'en' ? 'Sybex 9th Ed (993 p)' : 'Sybex Kitob (993 b)'}
-          </button>
           <button type="button" class="drawer-book-btn" style="background:#4f46e5;" onclick="window.openEmbeddedPdfReader && window.openEmbeddedPdfReader('dumps')">
             🎯 ${currentLang === 'en' ? 'Exam Dumps (279 p)' : 'Testlar (279 b)'}
           </button>
@@ -2784,13 +2781,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pdfLangLabel) pdfLangLabel.textContent = currentLang === 'en' ? 'Soft UZ' : 'English';
 
     if (currentLang === 'en') {
-      if (title) title.textContent = "CompTIA Security+ SY0-701: Official Study Materials & PDF Library";
-      if (desc) desc.textContent = "993-page official Sybex 9th Edition study guide and 279-page practice test dumps from D:\\comptia.";
-      if (card1Title) card1Title.textContent = "CompTIA Security+ Study Guide (Exam SY0-701)";
-      if (card1Desc) card1Desc.textContent = "The world's most acclaimed 993-page official Sybex guide covering all 5 domains, labs, and exam standards.";
-      if (btnGuide) btnGuide.textContent = "📖 Open Book (In-App PDF Reader)";
+      if (title) title.textContent = "CompTIA Security+ SY0-701: Official PDF Library";
+      if (desc) desc.textContent = "279-page authentic exam questions with detailed answers and deep explanations (Practice Test Dumps).";
       if (card2Title) card2Title.textContent = "CompTIA SY0-701 Practice Test Dumps";
-      if (card2Desc) card2Desc.textContent = "279-page authentic exam questions with detailed answers, analysis, and Sybex references.";
+      if (card2Desc) card2Desc.textContent = "279-page authentic exam questions with detailed answers, analysis, and explanations.";
       if (btnDumps) btnDumps.textContent = "📝 Open Exam Dumps (In-App PDF Reader)";
       if (lblBack) lblBack.textContent = "Library";
       if (lblExternal) lblExternal.textContent = "External App";
@@ -2798,11 +2792,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (lblPage) lblPage.textContent = "Page:";
       if (btnFit) btnFit.textContent = "↔ Fit Width";
     } else {
-      if (title) title.textContent = "CompTIA Security+ SY0-701: Rasmiy Darsliklar & PDF Kutubxona";
-      if (desc) desc.textContent = "D:\\comptia papkasidagi 993 betlik to'liq rasmiy Sybex darslik kitobi va 279 betlik Practice Test Dumps to'plami.";
-      if (card1Title) card1Title.textContent = "CompTIA Security+ Study Guide (Exam SY0-701)";
-      if (card1Desc) card1Desc.textContent = "CompTIA Security+ bo'yicha dunyodagi eng nufuzli, 993 betlik to'liq rasmiy qo'llanma. Barcha 5 ta domen va amaliy stsenariylarni o'z ichiga oladi.";
-      if (btnGuide) btnGuide.textContent = "📖 Kitobni Ochish (Ichki PDF Reader)";
+      if (title) title.textContent = "CompTIA Security+ SY0-701: Rasmiy PDF Kutubxona";
+      if (desc) desc.textContent = "279 betlik haqiqiy imtihon savollari va chuqur tahlillari to'plami (Practice Test Dumps).";
       if (card2Title) card2Title.textContent = "CompTIA SY0-701 Practice Test Dumps";
       if (card2Desc) card2Desc.textContent = "279 betlik haqiqiy imtihon savollari to'plami. Har bir savolning to'g'ri javoblari va chuqur tahlillari bilan.";
       if (btnDumps) btnDumps.textContent = "📝 Savollar To'plamini Ochish (Ichki PDF Reader)";
